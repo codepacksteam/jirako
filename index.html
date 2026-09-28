@@ -1,0 +1,2167 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F5F7FA">
+    <title>پروپوزال تحول دیجیتال ژیارکو | Code Packs</title>
+    <meta name="description" content="پروپوزال بازطراحی وب‌سایت، سئو، هوشمندسازی با AI، Lead Generation و بازاریابی دیجیتال برند ژیارکو — Code Packs">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #F5F7FA;
+            --surface: rgba(255, 255, 255, 0.72);
+            --surface-hover: rgba(255, 255, 255, 0.92);
+            --border: rgba(0, 0, 0, 0.06);
+            --border-light: rgba(0, 0, 0, 0.09);
+            --primary: #1E3A5F;
+            --primary-bright: #3D7AB5;
+            --accent: #E8A33D;
+            --accent-light: #D18A2C;
+            --gold-grad: linear-gradient(135deg, #F5C26B, #E8A33D);
+            --green: #36B37E;
+            --green-soft: rgba(54, 179, 126, 0.10);
+            --blue: #4C9AFF;
+            --blue-soft: rgba(76, 154, 255, 0.10);
+            --purple: #9F7AEA;
+            --purple-soft: rgba(159, 122, 234, 0.10);
+            --text: #1A202C;
+            --text-secondary: #3E4C59;
+            --text-muted: #627D98;
+            --text-faint: #829AB1;
+            --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.06);
+            --shadow: 0 18px 50px rgba(0, 0, 0, 0.09);
+            --shadow-lg: 0 30px 90px rgba(0, 0, 0, 0.12);
+            --radius: 22px;
+            --radius-lg: 32px;
+            --header-height: 76px;
+            --ease: 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+        body {
+            font-family: "Vazirmatn", Tahoma, sans-serif;
+            color: var(--text);
+            background-color: var(--bg);
+            background-image:
+                radial-gradient(ellipse at 80% -10%, rgba(30, 58, 95, 0.07), transparent 50%),
+                radial-gradient(ellipse at 10% 20%, rgba(232, 163, 61, 0.06), transparent 40%),
+                radial-gradient(ellipse at 90% 70%, rgba(61, 122, 181, 0.06), transparent 45%),
+                radial-gradient(ellipse at 50% 100%, rgba(255, 255, 255, 0.4), transparent 55%);
+            font-size: 15px;
+            line-height: 1.9;
+            letter-spacing: -0.01em;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        body.menu-open { overflow: hidden; }
+        ::selection { background: var(--accent); color: #fff; }
+        ::-webkit-scrollbar { width: 9px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: #cbd5e0; border-radius: 10px; border: 2px solid var(--bg); }
+        ::-webkit-scrollbar-thumb:hover { background: #a0aec0; }
+        a { color: inherit; text-decoration: none; }
+        button { font-family: inherit; border: 0; cursor: pointer; background: none; }
+        img { max-width: 100%; display: block; }
+        ul { list-style: none; }
+
+        .container { width: min(1160px, calc(100% - 32px)); margin: 0 auto; position: relative; z-index: 2; }
+        .eyebrow {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 6px 15px; border-radius: 50px;
+            background: rgba(255,255,255,0.7); border: 1px solid rgba(0,0,0,0.08);
+            color: var(--text-secondary); font-size: 0.7rem; font-weight: 700;
+            backdrop-filter: blur(10px);
+        }
+        .eyebrow.blue { background: rgba(76,154,255,0.08); border-color: rgba(76,154,255,0.25); color: #1a5c9e; }
+
+        /* HEADER */
+        .site-header {
+            position: sticky; top: 0; z-index: 1000;
+            height: var(--header-height);
+            background: rgba(245, 247, 250, 0.85);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+            backdrop-filter: blur(24px) saturate(180%);
+            transition: var(--ease);
+        }
+        .site-header.scrolled {
+            background: rgba(255,255,255,0.95);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.05);
+            border-bottom-color: rgba(0,0,0,0.07);
+        }
+        .header-inner {
+            width: min(1200px, calc(100% - 36px)); height: 100%;
+            margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+        }
+        .logo { display: flex; align-items: center; gap: 11px; color: var(--text); font-weight: 900; font-size: 1.02rem; white-space: nowrap; }
+        .logo-mark {
+            position: relative; width: 40px; height: 40px;
+            display: grid; place-items: center; border-radius: 14px;
+            color: #fff; font-size: 0.78rem; font-weight: 900;
+            background: var(--gold-grad);
+            box-shadow: 0 8px 25px rgba(232, 163, 61, 0.35);
+        }
+        .logo-mark::after {
+            content: ""; position: absolute; inset: -2px;
+            border-radius: 16px; background: var(--gold-grad);
+            opacity: 0.35; filter: blur(12px); z-index: -1;
+            animation: logoGlow 3s ease-in-out infinite;
+        }
+        @keyframes logoGlow { 0%,100%{opacity:.25;transform:scale(1)} 50%{opacity:.45;transform:scale(1.05)} }
+        .logo span:last-child { background: linear-gradient(135deg, #1A202C 60%, #D18A2C); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .header-actions { display: flex; align-items: center; gap: 10px; }
+        .menu-button {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 22px; border-radius: 50px;
+            background: rgba(255,255,255,0.7); border: 1px solid rgba(0,0,0,0.08);
+            color: var(--text-secondary); font-size: 0.82rem; font-weight: 700;
+            transition: var(--ease); backdrop-filter: blur(8px);
+        }
+        .menu-button:hover { background: rgba(255,255,255,0.95); color: var(--accent-light); border-color: rgba(232,163,61,0.3); transform: translateY(-2px); }
+        .hamburger {
+            display: none; width: 44px; height: 44px;
+            flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+            border-radius: 14px; background: rgba(255,255,255,0.7); border: 1px solid rgba(0,0,0,0.08);
+        }
+        .hamburger span { width: 22px; height: 2.5px; background: var(--text); border-radius: 3px; transition: 0.3s ease; }
+        .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+        .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* MOBILE */
+        .mobile-overlay {
+            position: fixed; inset: 0; z-index: 999;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(18px);
+            opacity: 0; visibility: hidden; pointer-events: none; transition: 0.4s ease;
+        }
+        .mobile-overlay.active { opacity: 1; visibility: visible; pointer-events: auto; }
+        .mobile-panel {
+            position: absolute; top: 0; right: 0; width: min(370px, 90vw); height: 100%;
+            padding: 95px 24px 32px; overflow-y: auto;
+            background: #FFFFFF;
+            border-left: 1px solid rgba(0,0,0,0.08);
+            box-shadow: -30px 0 80px rgba(0,0,0,0.15);
+            transform: translateX(105%); transition: 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .mobile-overlay.active .mobile-panel { transform: translateX(0); }
+        .mobile-panel-title { color: var(--text-faint); font-size: 0.68rem; margin: 0 10px 12px; }
+        .mobile-panel a {
+            display: flex; align-items: center; gap: 11px;
+            padding: 11px 14px; margin-bottom: 3px; border-radius: 14px;
+            color: var(--text-secondary); font-size: 0.84rem; font-weight: 600;
+            transition: 0.25s ease;
+        }
+        .mobile-panel a:hover, .mobile-panel a.active { background: rgba(232,163,61,0.08); color: var(--accent-light); }
+        .mobile-num {
+            width: 30px; height: 30px; flex: 0 0 auto;
+            display: inline-flex; align-items: center; justify-content: center;
+            border-radius: 50%; background: var(--gold-grad); color: #fff;
+            font-size: 0.65rem; font-weight: 800;
+        }
+        .mobile-panel a.cp-link .mobile-num {
+            background: linear-gradient(135deg, #0E2536, #1E3A5F);
+        }
+
+        /* HERO */
+        .hero {
+            position: relative; overflow: hidden;
+            margin: 30px auto 38px; border-radius: var(--radius-lg);
+            min-height: 580px; display: grid; place-items: center;
+            padding: 80px 50px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #F0F4F8 35%, #E8EEF5 65%, #F5F7FA 100%);
+            box-shadow: var(--shadow-lg);
+            isolation: isolate;
+        }
+        .hero::before {
+            content: ""; position: absolute; inset: 0; z-index: -1;
+            background:
+                radial-gradient(ellipse at 15% 20%, rgba(232,163,61,0.08), transparent 40%),
+                radial-gradient(ellipse at 85% 70%, rgba(76,154,255,0.1), transparent 45%);
+        }
+        .hero::after {
+            content: ""; position: absolute; inset: 0; z-index: -1; opacity: 0.03;
+            background-image:
+                linear-gradient(rgba(0,0,0,0.4) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.4) 1px, transparent 1px);
+            background-size: 42px 42px;
+            mask-image: linear-gradient(to bottom, black, transparent);
+        }
+        .orb { position: absolute; border-radius: 50%; pointer-events: none; animation: floatOrb 8s ease-in-out infinite; }
+        .orb.o1 { width: 14px; height: 14px; background: var(--accent-light); top: 18%; left: 12%; box-shadow: 0 0 25px rgba(232,163,61,0.6); }
+        .orb.o2 { width: 9px; height: 9px; background: var(--primary-bright); bottom: 16%; right: 10%; animation-delay: -2.5s; box-shadow: 0 0 20px rgba(61,122,181,0.6); }
+        .orb.o3 { width: 6px; height: 6px; background: #fff; opacity: 0.6; top: 27%; right: 18%; animation-delay: -4.5s; }
+        @keyframes floatOrb { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-22px) scale(1.2)} }
+        .hero-content { position: relative; z-index: 3; max-width: 920px; margin: auto; text-align: center; }
+        .hero-label {
+            display: inline-flex; align-items: center; gap: 9px;
+            margin-bottom: 18px; padding: 7px 18px; border-radius: 50px;
+            background: rgba(255,255,255,0.85); border: 1px solid rgba(0,0,0,0.08);
+            color: var(--text-secondary); font-size: 0.72rem; font-weight: 600;
+            backdrop-filter: blur(12px);
+            animation: fadeInDown 1s ease both;
+        }
+        .hero-label-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-light); box-shadow: 0 0 18px rgba(232,163,61,0.8); animation: pulseDot 2s ease-in-out infinite; }
+        @keyframes pulseDot { 0%,100%{box-shadow:0 0 15px rgba(232,163,61,0.7)} 50%{box-shadow:0 0 28px rgba(232,163,61,1)} }
+        @keyframes fadeInDown { from{opacity:0;transform:translateY(-18px)} to{opacity:1;transform:translateY(0)} }
+        .hero h1 {
+            font-size: clamp(2.1rem, 5.5vw, 3.6rem); line-height: 1.3; font-weight: 900;
+            letter-spacing: -0.03em; margin-bottom: 5px;
+            animation: fadeInUp 0.9s 0.15s ease both;
+        }
+        .hero h1 span {
+            background: var(--gold-grad);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            filter: drop-shadow(0 0 28px rgba(232,163,61,0.3));
+        }
+        @keyframes fadeInUp { from{opacity:0;transform:translateY(25px)} to{opacity:1;transform:translateY(0)} }
+        .hero-description {
+            max-width: 820px; margin: 18px auto 0; color: var(--text-secondary);
+            line-height: 2.05; font-size: 1rem;
+            animation: fadeInUp 0.9s 0.3s ease both;
+        }
+        .hero-chips { margin-top: 28px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; animation: fadeInUp 0.9s 0.45s ease both; }
+        .hero-chip {
+            display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px;
+            border-radius: 50px; font-size: 0.7rem; color: var(--text-secondary);
+            background: rgba(255,255,255,0.9); border: 1px solid rgba(0,0,0,0.06);
+            backdrop-filter: blur(8px);
+            transition: var(--ease);
+        }
+        .hero-chip:hover { background: rgba(232,163,61,0.09); border-color: rgba(232,163,61,0.25); transform: translateY(-2px); }
+        .hero-stats {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+            max-width: 780px; margin: 34px auto 0;
+            animation: fadeInUp 0.9s 0.6s ease both;
+        }
+        .hero-stat {
+            padding: 16px 12px; border-radius: 16px; text-align: center;
+            background: rgba(255,255,255,0.85); border: 1px solid rgba(0,0,0,0.05);
+            backdrop-filter: blur(10px);
+            transition: var(--ease);
+        }
+        .hero-stat:hover { background: rgba(255,255,255,0.95); border-color: rgba(232,163,61,0.2); }
+        .hero-stat strong { display: block; color: var(--accent-light); font-size: 1.25rem; font-weight: 900; }
+        .hero-stat span { color: var(--text-muted); font-size: 0.62rem; }
+
+        /* TOC */
+        .toc {
+            position: relative; padding: 26px; margin-bottom: 28px;
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: var(--radius); box-shadow: var(--shadow-sm);
+            backdrop-filter: blur(16px);
+            transition: var(--ease);
+        }
+        .toc-header { display: flex; align-items: center; justify-content: space-between; cursor: pointer; user-select: none; }
+        .toc-title { display: flex; align-items: center; gap: 9px; color: var(--text); font-size: 1rem; font-weight: 800; }
+        .toc-arrow { color: var(--accent); transition: 0.35s ease; }
+        .toc.collapsed .toc-arrow { transform: rotate(180deg); }
+        .toc.collapsed .toc-links { display: none; }
+        .toc-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(185px, 1fr)); gap: 5px; margin-top: 16px; }
+        .toc-links a {
+            display: flex; align-items: center; gap: 9px; padding: 9px 12px;
+            border-radius: 12px; color: var(--text-secondary); font-size: 0.75rem; font-weight: 600;
+            transition: 0.25s ease;
+        }
+        .toc-links a:hover, .toc-links a.active { color: var(--accent-light); background: rgba(232,163,61,0.06); }
+        .toc-num {
+            width: 26px; height: 26px; flex: 0 0 auto;
+            display: inline-flex; align-items: center; justify-content: center;
+            border-radius: 50%; background: var(--gold-grad); color: #fff;
+            font-size: 0.62rem; font-weight: 800;
+        }
+        .toc-links a.cp-link .toc-num {
+            background: linear-gradient(135deg, #0E2536, #1E3A5F);
+        }
+
+        /* SECTIONS */
+        .section {
+            position: relative; margin-bottom: 28px; padding: 42px 36px;
+            border-radius: var(--radius); background: var(--surface);
+            border: 1px solid var(--border); box-shadow: var(--shadow-sm);
+            backdrop-filter: blur(16px);
+            opacity: 0; transform: translateY(32px);
+            transition: opacity 0.8s ease, transform 0.8s ease, box-shadow var(--ease), border-color var(--ease);
+            overflow: hidden;
+        }
+        .section::before {
+            content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: var(--gold-grad); opacity: 0; transition: 0.5s ease;
+        }
+        .section.visible { opacity: 1; transform: translateY(0); }
+        .section.visible::before { opacity: 0.7; }
+        .section:hover { box-shadow: var(--shadow); border-color: var(--border-light); }
+        .section:hover::before { opacity: 1; }
+        .section-head { display: flex; align-items: center; gap: 14px; margin-bottom: 25px; padding-bottom: 17px; border-bottom: 1px solid rgba(232,163,61,0.2); }
+        .section-icon {
+            width: 48px; height: 48px; flex: 0 0 auto;
+            display: inline-flex; align-items: center; justify-content: center;
+            border-radius: 16px; font-size: 1rem; font-weight: 900; color: #fff;
+            background: var(--gold-grad); box-shadow: 0 10px 28px rgba(232,163,61,0.3);
+            transition: var(--ease);
+        }
+        .section:hover .section-icon { transform: scale(1.06); }
+        .section-head-content { flex: 1; }
+        .section-title { color: var(--text); font-size: 1.5rem; line-height: 1.4; font-weight: 900; letter-spacing: -0.01em; }
+        .section-subtitle { margin-top: 3px; color: var(--text-muted); font-size: 0.7rem; }
+        .section h3 { color: var(--accent-light); margin: 28px 0 12px; font-size: 1.05rem; font-weight: 800; }
+        .section p { color: var(--text-secondary); margin-bottom: 14px; line-height: 1.95; }
+        .section ul { margin: 10px 0 18px; padding-right: 24px; color: var(--text-secondary); }
+        .section li { margin-bottom: 8px; }
+
+        /* HIGHLIGHTS */
+        .highlight {
+            position: relative; overflow: hidden; padding: 22px 24px; margin: 16px 0 22px;
+            border-radius: 16px; color: var(--text-secondary);
+            background: linear-gradient(135deg, rgba(232,163,61,0.07), rgba(232,163,61,0.02));
+            border: 1px solid rgba(232,163,61,0.15);
+            border-right: 4px solid var(--accent);
+            transition: var(--ease);
+        }
+        .highlight strong { color: var(--accent-light); }
+        .info-blue { padding: 17px 20px; margin: 16px 0; border-radius: 14px; font-size: 0.82rem; background: var(--blue-soft); border-right: 4px solid var(--blue); color: var(--text-secondary); }
+        .info-green { padding: 17px 20px; margin: 16px 0; border-radius: 14px; font-size: 0.82rem; background: var(--green-soft); border-right: 4px solid var(--green); color: var(--text-secondary); }
+        .info-gold { padding: 17px 20px; margin: 16px 0; border-radius: 14px; font-size: 0.82rem; background: var(--purple-soft); border-right: 4px solid var(--purple); color: var(--text-secondary); }
+
+        /* CARDS */
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 18px 0; }
+        .card {
+            position: relative; overflow: hidden; padding: 22px;
+            background: var(--surface); border: 1px solid var(--border); border-radius: 18px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+            transition: var(--ease);
+        }
+        .card::after {
+            content: ""; position: absolute; width: 100px; height: 100px; top: -55px; left: -55px;
+            border-radius: 50%; background: rgba(232,163,61,0.05); transition: var(--ease);
+        }
+        .card:hover { transform: translateY(-7px); border-color: rgba(232,163,61,0.22); box-shadow: 0 20px 45px rgba(0,0,0,0.08); background: var(--surface-hover); }
+        .card:hover::after { transform: scale(1.6); }
+        .card-icon { position: relative; z-index: 2; font-size: 1.5rem; margin-bottom: 6px; }
+        .card h4 { position: relative; z-index: 2; color: var(--text); font-size: 0.94rem; font-weight: 800; margin-bottom: 7px; }
+        .card p { position: relative; z-index: 2; font-size: 0.79rem; line-height: 1.85; margin: 0; color: var(--text-secondary); }
+
+        /* AI SHOWCASE */
+        .ai-showcase {
+            position: relative; overflow: hidden; margin-top: 20px;
+            border-radius: 24px; background: linear-gradient(135deg, #FFFFFF, #F0F4F8 55%, #E8EEF5);
+            box-shadow: 0 22px 55px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        .ai-showcase-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 26px; padding: 36px; }
+        .ai-showcase h3 { color: #1a5c9e; margin: 0 0 10px; font-size: 1.3rem; }
+        .ai-showcase p { color: var(--text-secondary); }
+        .ai-features { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 19px; }
+        .ai-feature {
+            padding: 11px 13px; border-radius: 13px;
+            background: rgba(255,255,255,0.7); border: 1px solid rgba(0,0,0,0.05);
+            color: var(--text-secondary); font-size: 0.7rem; line-height: 1.7;
+            transition: var(--ease);
+        }
+        .ai-feature:hover { background: rgba(255,255,255,0.95); border-color: rgba(76,154,255,0.25); transform: translateY(-3px); }
+        .chat-window {
+            align-self: center; padding: 14px; border-radius: 20px;
+            background: #FFFFFF;
+            box-shadow: 0 22px 55px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .chat-head { display: flex; align-items: center; gap: 10px; padding: 5px 5px 13px; border-bottom: 1px solid rgba(0,0,0,0.06); }
+        .chat-avatar {
+            width: 37px; height: 37px; display: grid; place-items: center;
+            border-radius: 50%; color: #fff; font-size: 0.9rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-bright));
+            box-shadow: 0 6px 18px rgba(30,58,95,0.25);
+        }
+        .chat-head strong { display: block; font-size: 0.78rem; color: var(--text); }
+        .chat-head small { color: var(--green); font-size: 0.6rem; font-weight: 600; }
+        .bubble {
+            width: fit-content; max-width: 88%; padding: 10px 12px; margin-top: 10px;
+            border-radius: 13px; font-size: 0.68rem; line-height: 1.75;
+            animation: bubbleIn 0.35s ease both;
+        }
+        @keyframes bubbleIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+        .bubble.ai { background: #F0F4F8; color: #2A3A4A; border-bottom-right-radius: 4px; }
+        .bubble.user { margin-right: auto; background: var(--primary); color: #fff; border-bottom-left-radius: 4px; }
+        .typing { display: flex; gap: 3px; margin-top: 12px; }
+        .typing span { width: 5px; height: 5px; border-radius: 50%; background: #9AA5B5; animation: typing 0.9s infinite alternate; }
+        .typing span:nth-child(2) { animation-delay: 0.2s; }
+        .typing span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes typing { from{opacity:.25;transform:translateY(0)} to{opacity:1;transform:translateY(-4px)} }
+
+        /* GIFT */
+        .gift {
+            position: relative; overflow: hidden; padding: 36px; border-radius: 26px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FB 48%, #F0F4F8 100%);
+            border: 1px solid rgba(232,163,61,0.35); box-shadow: 0 28px 65px rgba(0,0,0,0.08);
+        }
+        .gift::before {
+            content: "🤖"; position: absolute; left: -15px; bottom: -70px;
+            font-size: 11rem; opacity: 0.04; transform: rotate(-15deg);
+        }
+        .gift-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; position: relative; z-index: 2; }
+        .gift-title span {
+            display: inline-flex; padding: 4px 13px; margin-bottom: 9px;
+            border-radius: 50px; font-size: 0.64rem; font-weight: 900;
+            background: var(--gold-grad); color: #fff;
+        }
+        .gift h3 { color: var(--accent-light); margin: 0; font-size: 1.4rem; }
+        .gift > p { position: relative; z-index: 2; max-width: 900px; margin-top: 13px; color: var(--text-secondary); }
+        .gift-grid { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(3, 1fr); gap: 11px; margin-top: 21px; }
+        .gift-item {
+            padding: 16px; border-radius: 14px;
+            background: rgba(255,255,255,0.8); border: 1px solid rgba(0,0,0,0.05);
+            transition: var(--ease);
+        }
+        .gift-item:hover { background: #FFFFFF; border-color: rgba(232,163,61,0.2); transform: translateY(-4px); }
+        .gift-item strong { display: block; color: var(--accent-light); font-size: 0.77rem; margin-bottom: 5px; }
+        .gift-item p { color: var(--text-muted); font-size: 0.65rem; line-height: 1.7; margin: 0; }
+        .gift-goal {
+            position: relative; z-index: 2; margin-top: 20px; padding: 15px 18px;
+            border-radius: 14px; background: rgba(232,163,61,0.07);
+            border-right: 3px solid var(--accent); color: var(--text-secondary); font-size: 0.78rem;
+        }
+        .gift-goal strong { color: var(--accent-light); }
+
+        /* FLOW */
+        .crm-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 20px 0; }
+        .crm-step {
+            position: relative; padding: 21px 16px; text-align: center;
+            border-radius: 18px; background: var(--surface); border: 1px solid var(--border);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+            transition: var(--ease);
+        }
+        .crm-step:hover { transform: translateY(-5px); border-color: rgba(232,163,61,0.2); }
+        .crm-step:not(:last-child)::after {
+            content: "←"; position: absolute; left: -15px; top: 50%; transform: translateY(-50%);
+            z-index: 2; width: 29px; height: 29px; display: grid; place-items: center;
+            border-radius: 50%; background: var(--gold-grad); color: #fff; font-size: 0.7rem;
+            box-shadow: 0 6px 16px rgba(232,163,61,0.25);
+        }
+        .crm-step-icon { font-size: 1.55rem; margin-bottom: 6px; }
+        .crm-step strong { display: block; color: var(--text); font-size: 0.79rem; margin-bottom: 5px; }
+        .crm-step p { margin: 0; color: var(--text-muted); font-size: 0.66rem; line-height: 1.7; }
+
+        /* TIMELINE */
+        .timeline { position: relative; margin-top: 20px; }
+        .timeline::before {
+            content: ""; position: absolute; top: 18px; bottom: 18px; right: 19px; width: 2px;
+            background: linear-gradient(to bottom, var(--accent), rgba(232,163,61,0.06));
+        }
+        .timeline-item { position: relative; display: grid; grid-template-columns: 40px 1fr; gap: 16px; margin-bottom: 15px; }
+        .timeline-dot {
+            position: relative; z-index: 2; width: 38px; height: 38px;
+            display: grid; place-items: center; border-radius: 50%;
+            background: var(--gold-grad); color: #fff; border: 5px solid var(--bg);
+            font-size: 0.65rem; font-weight: 900; box-shadow: 0 8px 22px rgba(232,163,61,0.2);
+        }
+        .timeline-content {
+            padding: 16px 18px; background: var(--surface); border: 1px solid var(--border);
+            border-radius: 16px; transition: var(--ease);
+        }
+        .timeline-content:hover { border-color: rgba(232,163,61,0.2); }
+        .timeline-content strong { color: var(--text); font-size: 0.83rem; }
+        .timeline-content span { display: inline-flex; margin-right: 8px; color: var(--accent-light); font-size: 0.64rem; font-weight: 700; }
+        .timeline-content p { margin: 5px 0 0; font-size: 0.72rem; color: var(--text-muted); }
+
+        /* CLUSTER */
+        .cluster-visual {
+            padding: 22px 20px; margin: 18px 0;
+            background: linear-gradient(135deg, rgba(30,58,95,0.04), rgba(232,163,61,0.04));
+            border: 1px solid rgba(0,0,0,0.06); border-radius: 18px;
+        }
+        .cluster-root {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 18px; margin-bottom: 14px;
+            border-radius: 12px; background: var(--gold-grad); color: #fff;
+            font-weight: 800; font-size: 0.82rem;
+            box-shadow: 0 10px 24px rgba(232,163,61,0.25);
+        }
+        .cluster-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        .cluster-item {
+            padding: 12px 14px; border-radius: 12px;
+            background: rgba(255,255,255,0.85); border: 1px solid rgba(0,0,0,0.05);
+            color: var(--text-secondary); font-size: 0.72rem; font-weight: 600;
+            transition: var(--ease);
+        }
+        .cluster-item:hover { border-color: rgba(232,163,61,0.3); transform: translateX(-4px); background: #fff; }
+
+        /* ============================================================
+           CP DIVIDER
+           ============================================================ */
+        .cp-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin: 44px 0 24px;
+            color: var(--text-muted);
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            position: relative;
+        }
+        .cp-divider::before,
+        .cp-divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(232,163,61,0.4), transparent);
+            max-width: 320px;
+        }
+        .cp-divider span {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 20px;
+            border-radius: 50px;
+            background: #FFFFFF;
+            border: 1px solid rgba(232,163,61,0.25);
+            color: var(--text-muted);
+            white-space: nowrap;
+            box-shadow: 0 6px 20px rgba(232,163,61,0.08);
+        }
+        .cp-divider svg { width: 14px; height: 14px; color: var(--accent); }
+
+        /* ============================================================
+           SECTION CP SHOWCASE — معرفی Code Packs
+           ============================================================ */
+        .section.cp-showcase {
+            position: relative;
+            padding: 70px 46px 58px;
+            background: linear-gradient(135deg, #0A1520 0%, #14263D 45%, #1E3A5F 100%);
+            color: #E8EEF5;
+            border: 1px solid rgba(232, 163, 61, 0.25);
+            overflow: hidden;
+            isolation: isolate;
+            box-shadow: 0 30px 80px rgba(10, 21, 32, 0.35);
+        }
+        .section.cp-showcase::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(232, 163, 61, 0.14) 1px, transparent 1.4px);
+            background-size: 34px 34px;
+            -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black, transparent);
+            mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black, transparent);
+            opacity: 1;
+            z-index: 0;
+            pointer-events: none;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+        .section.cp-showcase::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 8% 10%, rgba(232, 163, 61, 0.28), transparent 45%),
+                radial-gradient(circle at 92% 90%, rgba(61, 122, 181, 0.22), transparent 50%),
+                radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.06), transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .section.cp-showcase > * {
+            position: relative;
+            z-index: 2;
+        }
+        .section.cp-showcase:hover {
+            border-color: rgba(232, 163, 61, 0.45);
+            box-shadow: 0 34px 90px rgba(10, 21, 32, 0.45);
+        }
+
+        .cp-header {
+            text-align: center;
+            margin-bottom: 42px;
+            padding-bottom: 38px;
+            border-bottom: 1px solid rgba(232, 163, 61, 0.18);
+        }
+        .cp-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            margin-bottom: 20px;
+            border-radius: 50px;
+            background: rgba(232, 163, 61, 0.12);
+            border: 1px solid rgba(232, 163, 61, 0.3);
+            color: #F5C26B;
+            font-size: 0.66rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+        .cp-badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #E8A33D;
+            box-shadow: 0 0 12px #E8A33D;
+            animation: cpPulse 2s ease-in-out infinite;
+        }
+        @keyframes cpPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.3); }
+        }
+        .cp-logo-row {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+        .cp-logo-mark {
+            width: 62px;
+            height: 62px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #F5C26B 0%, #E8A33D 100%);
+            box-shadow:
+                0 14px 40px rgba(232, 163, 61, 0.4),
+                inset 0 -3px 8px rgba(0, 0, 0, 0.18),
+                inset 0 3px 6px rgba(255, 255, 255, 0.25);
+            animation: cpFloat 5s ease-in-out infinite;
+        }
+        @keyframes cpFloat {
+            0%, 100% { transform: translateY(0) rotate(0); }
+            50% { transform: translateY(-6px) rotate(-2deg); }
+        }
+        .cp-logo-mark svg { width: 100%; height: 100%; }
+        .cp-logo-text { text-align: right; }
+        .cp-logo-text h2 {
+            margin: 0;
+            font-size: 2.4rem;
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            color: #FFFFFF;
+            line-height: 1.1;
+            text-shadow: 0 2px 20px rgba(232, 163, 61, 0.35);
+        }
+        .cp-logo-text p {
+            color: #F5C26B;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            direction: ltr;
+            text-align: right;
+            margin: 4px 0 0;
+        }
+        .cp-tagline {
+            max-width: 640px;
+            margin: 8px auto 0;
+            color: #C7D2DF;
+            font-size: 0.94rem;
+            line-height: 1.95;
+            font-weight: 400;
+        }
+        .cp-tagline strong {
+            color: #F5C26B;
+            font-weight: 800;
+        }
+
+        .cp-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin: 34px auto 48px;
+            max-width: 900px;
+        }
+        .cp-stat {
+            position: relative;
+            padding: 22px 16px;
+            border-radius: 14px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid rgba(232, 163, 61, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.35s var(--ease);
+            overflow: hidden;
+        }
+        .cp-stat::before {
+            content: "";
+            position: absolute;
+            top: 0; right: 0; left: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #E8A33D, transparent);
+            opacity: 0;
+            transition: opacity 0.35s var(--ease);
+        }
+        .cp-stat:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(232, 163, 61, 0.45);
+            transform: translateY(-4px);
+            box-shadow: 0 14px 40px rgba(232, 163, 61, 0.18);
+        }
+        .cp-stat:hover::before { opacity: 1; }
+        .cp-stat strong {
+            display: block;
+            color: #FFFFFF;
+            font-size: 1.55rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            margin-bottom: 6px;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #FFFFFF 40%, #F5C26B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .cp-stat span {
+            color: #9AAFC2;
+            font-size: 0.7rem;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .cp-subhead {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin: 52px 0 26px;
+        }
+        .cp-subhead h3 {
+            margin: 0;
+            color: #FFFFFF;
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+            position: relative;
+            padding: 0 18px;
+        }
+        .cp-subhead h3::before,
+        .cp-subhead h3::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 32px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #E8A33D, transparent);
+        }
+        .cp-subhead h3::before { right: -28px; }
+        .cp-subhead h3::after { left: -28px; }
+
+        .cp-team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 10px;
+        }
+        .cp-team-card {
+            position: relative;
+            padding: 28px 22px 24px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(232, 163, 61, 0.18);
+            text-align: center;
+            transition: all 0.4s var(--ease);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        .cp-team-card::before {
+            content: "";
+            position: absolute;
+            top: 0; right: 0; left: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #E8A33D, transparent);
+            opacity: 0;
+            transition: opacity 0.4s var(--ease);
+        }
+        .cp-team-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(232, 163, 61, 0.5);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(232, 163, 61, 0.22);
+        }
+        .cp-team-card:hover::before { opacity: 1; }
+        .cp-team-avatar {
+            width: 62px; height: 62px;
+            margin: 0 auto 16px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(232, 163, 61, 0.25), rgba(30, 58, 95, 0.25));
+            color: #F5C26B;
+            display: grid;
+            place-items: center;
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            border: 1.5px solid rgba(232, 163, 61, 0.35);
+            transition: all 0.4s var(--ease);
+            box-shadow: 0 8px 24px rgba(232, 163, 61, 0.15);
+            direction: ltr;
+        }
+        .cp-team-card:hover .cp-team-avatar {
+            background: linear-gradient(135deg, #F5C26B, #E8A33D);
+            color: #0A1520;
+            border-color: transparent;
+            transform: scale(1.08);
+            box-shadow: 0 12px 32px rgba(232, 163, 61, 0.4);
+        }
+        .cp-team-card h4 {
+            color: #FFFFFF;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            font-weight: 800;
+            letter-spacing: -0.005em;
+            transition: color 0.3s var(--ease);
+        }
+        .cp-team-card:hover h4 { color: #F5C26B; }
+        .cp-team-card .cp-role {
+            color: #9AAFC2;
+            font-size: 0.66rem;
+            font-weight: 600;
+            margin-bottom: 14px;
+            direction: ltr;
+            letter-spacing: 0.04em;
+            transition: color 0.3s var(--ease);
+        }
+        .cp-team-card:hover .cp-role { color: #F5C26B; }
+        .cp-team-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            justify-content: center;
+        }
+        .cp-team-skills span {
+            padding: 4px 10px;
+            border-radius: 10px;
+            font-size: 0.56rem;
+            font-weight: 600;
+            background: rgba(232, 163, 61, 0.1);
+            color: #9AAFC2;
+            border: 1px solid rgba(232, 163, 61, 0.18);
+            direction: ltr;
+            transition: all 0.3s var(--ease);
+        }
+        .cp-team-card:hover .cp-team-skills span {
+            background: rgba(232, 163, 61, 0.2);
+            color: #F5C26B;
+            border-color: rgba(232, 163, 61, 0.4);
+        }
+
+        .cp-portfolio {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 10px;
+        }
+        .cp-project {
+            position: relative;
+            min-height: 250px;
+            padding: 24px 22px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(232, 163, 61, 0.18);
+            transition: all 0.4s var(--ease);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        .cp-project::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 100% 0%, rgba(232, 163, 61, 0.12), transparent 55%);
+            opacity: 0;
+            transition: opacity 0.4s var(--ease);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .cp-project:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(232, 163, 61, 0.5);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(232, 163, 61, 0.22);
+        }
+        .cp-project:hover::before { opacity: 1; }
+        .cp-project-num {
+            position: absolute;
+            left: 16px;
+            top: 6px;
+            color: #FFFFFF;
+            opacity: 0.05;
+            font-size: 3.8rem;
+            line-height: 1;
+            font-weight: 900;
+            pointer-events: none;
+        }
+        .cp-project-type {
+            width: fit-content;
+            position: relative;
+            z-index: 1;
+            padding: 4px 11px;
+            border-radius: 10px;
+            font-size: 0.56rem;
+            font-weight: 800;
+            margin-bottom: 14px;
+            letter-spacing: 0.08em;
+            background: rgba(232, 163, 61, 0.15);
+            color: #F5C26B;
+            border: 1px solid rgba(232, 163, 61, 0.25);
+            direction: ltr;
+            transition: all 0.3s var(--ease);
+        }
+        .cp-project:hover .cp-project-type {
+            background: rgba(232, 163, 61, 0.25);
+            border-color: rgba(232, 163, 61, 0.5);
+        }
+        .cp-project h4 {
+            position: relative;
+            z-index: 1;
+            color: #FFFFFF;
+            font-size: 0.98rem;
+            margin-bottom: 9px;
+            font-weight: 800;
+            letter-spacing: -0.008em;
+            transition: color 0.3s var(--ease);
+        }
+        .cp-project:hover h4 { color: #F5C26B; }
+        .cp-project p {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            margin: 0;
+            color: #B8C7D9;
+            font-size: 0.74rem;
+            line-height: 1.85;
+        }
+        .cp-project-tags {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 15px;
+        }
+        .cp-project-tags span {
+            padding: 3px 9px;
+            border-radius: 10px;
+            font-size: 0.55rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.05);
+            color: #9AAFC2;
+            border: 1px solid rgba(232, 163, 61, 0.12);
+            direction: ltr;
+            transition: all 0.3s var(--ease);
+        }
+        .cp-project:hover .cp-project-tags span {
+            background: rgba(232, 163, 61, 0.15);
+            color: #F5C26B;
+            border-color: rgba(232, 163, 61, 0.3);
+        }
+
+        .cp-note {
+            position: relative;
+            margin-top: 40px;
+            padding: 24px 28px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid rgba(232, 163, 61, 0.2);
+            border-right: 3px solid #E8A33D;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        .cp-note p {
+            margin: 0;
+            color: #B8C7D9;
+            font-size: 0.86rem;
+            line-height: 1.9;
+        }
+        .cp-note strong { color: #F5C26B; font-weight: 700; }
+
+        .cp-showcase .cp-team-card,
+        .cp-showcase .cp-project,
+        .cp-showcase .cp-stat,
+        .cp-showcase .cp-header,
+        .cp-showcase .cp-subhead,
+        .cp-showcase .cp-note {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s var(--ease), transform 0.7s var(--ease), background 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+        }
+        .cp-showcase.visible .cp-header { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
+        .cp-showcase.visible .cp-stat:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.25s; }
+        .cp-showcase.visible .cp-stat:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.32s; }
+        .cp-showcase.visible .cp-stat:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.39s; }
+        .cp-showcase.visible .cp-stat:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.46s; }
+        .cp-showcase.visible .cp-subhead { opacity: 1; transform: translateY(0); transition-delay: 0.55s; }
+        .cp-showcase.visible .cp-team-card:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.65s; }
+        .cp-showcase.visible .cp-team-card:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.72s; }
+        .cp-showcase.visible .cp-team-card:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.79s; }
+        .cp-showcase.visible .cp-team-card:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.86s; }
+        .cp-showcase.visible .cp-team-card:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.93s; }
+        .cp-showcase.visible .cp-team-card:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 1.00s; }
+        .cp-showcase.visible .cp-project:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.15s; }
+        .cp-showcase.visible .cp-project:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.22s; }
+        .cp-showcase.visible .cp-project:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.29s; }
+        .cp-showcase.visible .cp-project:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.36s; }
+        .cp-showcase.visible .cp-project:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.43s; }
+        .cp-showcase.visible .cp-project:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 0.50s; }
+        .cp-showcase.visible .cp-project:nth-child(7) { opacity: 1; transform: translateY(0); transition-delay: 0.57s; }
+        .cp-showcase.visible .cp-project:nth-child(8) { opacity: 1; transform: translateY(0); transition-delay: 0.64s; }
+        .cp-showcase.visible .cp-project:nth-child(9) { opacity: 1; transform: translateY(0); transition-delay: 0.71s; }
+        .cp-showcase.visible .cp-project:nth-child(10) { opacity: 1; transform: translateY(0); transition-delay: 0.78s; }
+        .cp-showcase.visible .cp-project:nth-child(11) { opacity: 1; transform: translateY(0); transition-delay: 0.85s; }
+        .cp-showcase.visible .cp-project:nth-child(12) { opacity: 1; transform: translateY(0); transition-delay: 0.92s; }
+        .cp-showcase.visible .cp-project:nth-child(13) { opacity: 1; transform: translateY(0); transition-delay: 0.99s; }
+        .cp-showcase.visible .cp-project:nth-child(14) { opacity: 1; transform: translateY(0); transition-delay: 1.06s; }
+        .cp-showcase.visible .cp-project:nth-child(15) { opacity: 1; transform: translateY(0); transition-delay: 1.13s; }
+        .cp-showcase.visible .cp-note { opacity: 1; transform: translateY(0); transition-delay: 1.4s; }
+
+        /* FINAL CTA */
+        .final-cta {
+            position: relative; overflow: hidden; margin: 36px 0 20px;
+            padding: 64px 34px; text-align: center; border-radius: 30px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #F0F4F8 50%, #E8EEF5 100%);
+            box-shadow: var(--shadow-lg);
+        }
+        .final-cta::before {
+            content: ""; position: absolute; inset: 0;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(232,163,61,0.1), transparent 30%),
+                radial-gradient(circle at 85% 80%, rgba(76,154,255,0.08), transparent 35%);
+        }
+        .final-content { position: relative; z-index: 2; max-width: 780px; margin: auto; }
+        .final-icon { font-size: 2.8rem; animation: bounce 2s ease-in-out infinite; }
+        @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+        .final-cta h2 { margin: 9px 0; font-size: clamp(1.6rem, 4.5vw, 2.4rem); font-weight: 900; letter-spacing: -0.02em; }
+        .final-cta h2 span { background: var(--gold-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .final-cta p { color: var(--text-secondary); font-size: 0.85rem; }
+        .cta-button {
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+            margin-top: 22px; padding: 15px 38px; border-radius: 50px;
+            color: #fff; background: var(--gold-grad); font-weight: 900;
+            box-shadow: 0 14px 38px rgba(232,163,61,0.35);
+            transition: var(--ease); font-size: 0.9rem;
+        }
+        .cta-button:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 22px 55px rgba(232,163,61,0.45); }
+        .cta-tags { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+        .cta-tags span {
+            padding: 4px 13px; border-radius: 50px; font-size: 0.61rem;
+            color: var(--text-muted); background: rgba(255,255,255,0.7);
+            border: 1px solid rgba(0,0,0,0.06);
+        }
+
+        /* FOOTER */
+        footer { padding: 34px 16px 45px; text-align: center; color: var(--text-faint); font-size: 0.7rem; }
+        footer strong { color: var(--accent-light); }
+        .footer-slogan { margin-top: 7px; color: var(--accent); font-size: 0.75rem; }
+
+        /* BACK TOP */
+        .back-top {
+            position: fixed; left: 22px; bottom: 24px; z-index: 900;
+            width: 48px; height: 48px; display: grid; place-items: center;
+            border-radius: 50%; background: var(--gold-grad); color: #fff;
+            box-shadow: 0 14px 38px rgba(232,163,61,0.35);
+            cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(18px);
+            transition: 0.35s ease; font-size: 1rem;
+        }
+        .back-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+        .back-top:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(232,163,61,0.5); }
+
+        /* MODAL */
+        .contact-modal {
+            position: fixed; inset: 0; z-index: 1100;
+            display: flex; align-items: center; justify-content: center;
+            pointer-events: none; visibility: hidden; opacity: 0;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .contact-modal.active { pointer-events: auto; visibility: visible; opacity: 1; }
+        .contact-modal-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.35); backdrop-filter: blur(8px); }
+        .contact-modal-box {
+            position: relative; width: min(400px, 90vw);
+            background: #FFFFFF; border-radius: 24px;
+            padding: 28px 24px 24px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.2);
+            text-align: center; z-index: 2;
+            transform: translateY(20px) scale(0.96);
+            transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .contact-modal.active .contact-modal-box { transform: translateY(0) scale(1); }
+        .modal-close {
+            position: absolute; top: 12px; left: 12px;
+            width: 36px; height: 36px; border-radius: 50%;
+            background: #F0F4F8; color: #627D98; font-size: 1.2rem; line-height: 1;
+            display: grid; place-items: center; transition: background 0.2s;
+        }
+        .modal-close:hover { background: #E8EEF5; color: #1A202C; }
+        .contact-modal-box h3 { color: var(--text); font-size: 1.3rem; margin-bottom: 6px; font-weight: 900; }
+        .contact-modal-box > p { color: var(--text-muted); font-size: 0.8rem; margin-bottom: 20px; }
+        .contact-options { display: flex; flex-direction: column; gap: 10px; }
+        .contact-option {
+            display: flex; align-items: center; gap: 12px;
+            padding: 14px 16px; border-radius: 16px;
+            background: #F8FAFC; border: 1px solid rgba(0,0,0,0.05);
+            color: var(--text); transition: all 0.2s ease;
+        }
+        .contact-option:hover { background: #FFFFFF; border-color: rgba(232,163,61,0.3); box-shadow: 0 8px 20px rgba(0,0,0,0.06); transform: translateY(-2px); }
+        .contact-icon { flex-shrink: 0; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; }
+        .contact-icon svg { width: 100%; height: 100%; }
+        .whatsapp .contact-icon { color: #25D366; }
+        .bale .contact-icon { color: #4A90E2; }
+        .phone .contact-icon { color: #36B37E; }
+        .contact-option span:not(.contact-icon) { font-weight: 700; flex: 1; text-align: right; }
+        .contact-option small { color: var(--text-muted); font-size: 0.7rem; }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .cp-team-grid,
+            .cp-portfolio { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 920px) {
+            .ai-showcase-inner { grid-template-columns: 1fr; }
+            .chat-window { max-width: 540px; width: 100%; margin: auto; }
+            .gift-grid { grid-template-columns: 1fr 1fr; }
+            .crm-flow { grid-template-columns: 1fr 1fr; }
+            .crm-step::after { display: none !important; }
+            .cluster-grid { grid-template-columns: 1fr 1fr; }
+            .cp-stats { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            :root { --header-height: 64px; }
+            .container { width: min(100% - 20px, 1160px); }
+            .desktop-only { display: none; }
+            .hamburger { display: flex; }
+            .logo { font-size: 0.87rem; }
+            .logo-mark { width: 36px; height: 36px; border-radius: 12px; }
+            .hero { min-height: auto; margin-top: 16px; padding: 60px 18px 48px; border-radius: 24px; }
+            .hero-description { font-size: 0.84rem; }
+            .hero-stats { grid-template-columns: 1fr 1fr; gap: 8px; }
+            .hero-stat { padding: 12px 8px; }
+            .hero-stat strong { font-size: 1.05rem; }
+            .toc { padding: 20px 16px; border-radius: 18px; }
+            .toc-links { grid-template-columns: 1fr 1fr; }
+            .section { padding: 27px 18px; border-radius: 20px; }
+            .section-title { font-size: 1.2rem; }
+            .section-icon { width: 40px; height: 40px; border-radius: 13px; }
+            .ai-showcase-inner { padding: 26px 18px; }
+            .gift { padding: 26px 18px; border-radius: 20px; }
+            .gift-top { flex-direction: column; }
+            .final-cta { padding: 48px 20px; border-radius: 23px; }
+            .cta-button { width: 100%; }
+
+            .section.cp-showcase { padding: 42px 22px 40px; }
+            .cp-logo-mark { width: 52px; height: 52px; border-radius: 16px; }
+            .cp-logo-text h2 { font-size: 1.7rem; }
+            .cp-logo-text p { font-size: 0.66rem; letter-spacing: 0.12em; }
+            .cp-tagline { font-size: 0.85rem; }
+            .cp-badge { font-size: 0.6rem; padding: 5px 13px; }
+            .cp-team-grid,
+            .cp-portfolio { grid-template-columns: 1fr; gap: 12px; }
+            .cp-team-card { padding: 22px 18px 20px; }
+            .cp-project { min-height: auto; padding: 20px 18px; }
+            .cp-subhead { margin: 40px 0 22px; }
+            .cp-subhead h3 { font-size: 1rem; }
+            .cp-stats { margin: 28px auto 36px; gap: 10px; }
+            .cp-stat { padding: 18px 12px; }
+            .cp-stat strong { font-size: 1.3rem; }
+            .cp-note { padding: 20px 20px; }
+        }
+        @media (max-width: 520px) {
+            body { font-size: 14px; }
+            .hero { padding-right: 13px; padding-left: 13px; }
+            .hero h1 { font-size: 1.75rem; }
+            .hero-label { font-size: 0.62rem; }
+            .hero-chip { font-size: 0.6rem; padding: 5px 11px; }
+            .hero-stat strong { font-size: 0.95rem; }
+            .toc-links { grid-template-columns: 1fr; }
+            .section { padding: 22px 14px; }
+            .cards { grid-template-columns: 1fr; }
+            .ai-features { grid-template-columns: 1fr; }
+            .gift-grid { grid-template-columns: 1fr; }
+            .crm-flow { grid-template-columns: 1fr; }
+            .back-top { left: 14px; bottom: 16px; width: 42px; height: 42px; }
+            .cluster-grid { grid-template-columns: 1fr; }
+
+            .section.cp-showcase { padding: 34px 18px 32px; }
+            .cp-logo-row { flex-direction: column; gap: 12px; }
+            .cp-logo-text { text-align: center; }
+            .cp-logo-text p { text-align: center; }
+            .cp-logo-text h2 { font-size: 1.5rem; }
+            .cp-logo-mark { width: 48px; height: 48px; border-radius: 14px; }
+            .cp-stats { grid-template-columns: 1fr; }
+            .cp-team-card { padding: 20px 16px; }
+            .cp-project { padding: 18px 16px; }
+            .cp-subhead h3 { font-size: 0.92rem; padding: 0 10px; }
+            .cp-subhead h3::before,
+            .cp-subhead h3::after { width: 20px; }
+            .cp-subhead h3::before { right: -18px; }
+            .cp-subhead h3::after { left: -18px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .cp-showcase .cp-team-card,
+            .cp-showcase .cp-project,
+            .cp-showcase .cp-stat,
+            .cp-showcase .cp-header,
+            .cp-showcase .cp-subhead,
+            .cp-showcase .cp-note {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+        @media print {
+            .site-header, .mobile-overlay, .back-top, .toc, .contact-modal { display: none !important; }
+            body { background: #fff; font-size: 11px; color: #222; }
+            .section { opacity: 1 !important; transform: none !important; box-shadow: none; border: 1px solid #ddd; background: #fff; }
+            .cp-showcase .cp-team-card,
+            .cp-showcase .cp-project,
+            .cp-showcase .cp-stat,
+            .cp-showcase .cp-header,
+            .cp-showcase .cp-subhead,
+            .cp-showcase .cp-note { opacity: 1 !important; transform: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+    <div class="header-inner">
+        <a href="#" class="logo">
+            <span class="logo-mark">CP</span>
+            <span>Code Packs</span>
+        </a>
+        <div class="header-actions">
+            <button class="menu-button desktop-only" id="tocButton">📑 فهرست پروپوزال</button>
+            <button class="hamburger" id="hamburger" aria-label="نمایش فهرست">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<div class="mobile-overlay" id="mobileOverlay">
+    <nav class="mobile-panel">
+        <div class="mobile-panel-title">فهرست پروپوزال</div>
+        <a href="#s1"><span class="mobile-num">۱</span>خلاصه اجرایی</a>
+        <a href="#s2"><span class="mobile-num">۲</span>بازطراحی وب‌سایت</a>
+        <a href="#s3"><span class="mobile-num">۳</span>صفحات محصول</a>
+        <a href="#s4"><span class="mobile-num">۴</span>سئوی فنی</a>
+        <a href="#s5"><span class="mobile-num">۵</span>سئوی استراتژیک</a>
+        <a href="#s6"><span class="mobile-num">۶</span>خوشه موضوعی</a>
+        <a href="#s7"><span class="mobile-num">۷</span>سئوی محتوایی</a>
+        <a href="#s8"><span class="mobile-num">۸</span>چت‌بات هوشمند</a>
+        <a href="#s9"><span class="mobile-num">۹</span>Lead Generation و اندازه‌گیری</a>
+        <a href="#s10"><span class="mobile-num">۱۰</span>بات بله و پیام‌رسان</a>
+        <a href="#s11"><span class="mobile-num">۱۱</span>CRM و قیف فروش</a>
+        <a href="#s12"><span class="mobile-num">۱۲</span>بازاریابی شبکه‌های اجتماعی</a>
+        <a href="#s13" class="cp-link"><span class="mobile-num">◆</span>معرفی Code Packs</a>
+    </nav>
+</div>
+
+<button class="back-top" id="backTop" aria-label="بازگشت به بالا">↑</button>
+
+<main class="container">
+
+    <section class="hero">
+        <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+        <div class="hero-content">
+            <div class="hero-label"><span class="hero-label-dot"></span>پیشنهاد تحول دیجیتال برند ژیارکو — Code Packs</div>
+            <h1>فراتر از بازطراحی سایت؛<br>یک <span>اکوسیستم رشد دیجیتال</span><br>برای برند ژیارکو</h1>
+            <p class="hero-description">
+                این پروژه صرفاً «طراحی وب‌سایت» نیست. ما یک زیرساخت دیجیتال یکپارچه برای برند ژیارکو طراحی می‌کنیم که وب‌سایت، سئو، محتوا، هوش مصنوعی،
+                Lead Generation، اتوماسیون فروش و بازاریابی شبکه‌های اجتماعی را در قالب <strong>یک استراتژی واحد رشد</strong> به هم متصل می‌کند.
+            </p>
+            <div class="hero-chips">
+                <span class="hero-chip">🎨 بازطراحی سایت</span>
+                <span class="hero-chip">🔍 سئو</span>
+                <span class="hero-chip">✍️ محتوا</span>
+                <span class="hero-chip">🧠 هوش مصنوعی</span>
+                <span class="hero-chip">🎯 Lead Generation</span>
+                <span class="hero-chip">📣 بازاریابی اجتماعی</span>
+                <span class="hero-chip">📊 تحلیل داده</span>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat"><strong>۷ لایه</strong><span>استراتژی یکپارچه رشد</span></div>
+                <div class="hero-stat"><strong>هوش مصنوعی</strong><span>در تمام لایه‌ها</span></div>
+                <div class="hero-stat"><strong>سئو-محور</strong><span>معماری موتور‌جستجو</span></div>
+                <div class="hero-stat"><strong>تبدیل‌محور</strong><span>طراحی برای جذب سرنخ</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="toc" id="toc">
+        <div class="toc-header" id="tocHeader">
+            <div class="toc-title">📑 فهرست مطالب</div>
+            <span class="toc-arrow">▼</span>
+        </div>
+        <div class="toc-links">
+            <a href="#s1"><span class="toc-num">۱</span>خلاصه اجرایی</a>
+            <a href="#s2"><span class="toc-num">۲</span>بازطراحی وب‌سایت</a>
+            <a href="#s3"><span class="toc-num">۳</span>صفحات محصول</a>
+            <a href="#s4"><span class="toc-num">۴</span>سئوی فنی</a>
+            <a href="#s5"><span class="toc-num">۵</span>سئوی استراتژیک</a>
+            <a href="#s6"><span class="toc-num">۶</span>خوشه موضوعی</a>
+            <a href="#s7"><span class="toc-num">۷</span>سئوی محتوایی</a>
+            <a href="#s8"><span class="toc-num">۸</span>چت‌بات هوشمند</a>
+            <a href="#s9"><span class="toc-num">۹</span>Lead Generation و اندازه‌گیری</a>
+            <a href="#s10"><span class="toc-num">۱۰</span>بات بله و پیام‌رسان</a>
+            <a href="#s11"><span class="toc-num">۱۱</span>CRM و قیف فروش</a>
+            <a href="#s12"><span class="toc-num">۱۲</span>بازاریابی شبکه‌های اجتماعی</a>
+            <a href="#s13" class="cp-link"><span class="toc-num">◆</span>معرفی Code Packs</a>
+        </div>
+    </section>
+
+    <!-- ۱ -->
+    <section class="section" id="s1">
+        <div class="section-head">
+            <span class="section-icon">۱</span>
+            <div class="section-head-content">
+                <h2 class="section-title">خلاصه اجرایی — چرا این پروژه یک «تحول دیجیتال» است؟</h2>
+                <div class="section-subtitle">Digital Transformation, Not Just a Website</div>
+            </div>
+        </div>
+        <div class="highlight">
+            <strong>نگاه Code Packs:</strong>
+            هدف ما صرفاً تغییر ظاهر وب‌سایت فعلی نیست. با بررسی وب‌سایت‌های فعلی ژیارکو، ظرفیت بسیار خوبی برای ایجاد یک زیرساخت دیجیتال حرفه‌ای‌تر مشاهده می‌شود؛
+            زیرساختی که همزمان نقش <strong style="color:var(--accent-light)">وب‌سایت رسمی برند، کاتالوگ و مرجع محصولات، ابزار جذب مشتری، بستر تولید سرنخ و نقطه اتصال تمام فعالیت‌های دیجیتال برند</strong> را ایفا کند.
+        </div>
+        <p>
+            به همین دلیل پیشنهاد کدپکس اجرای پروژه در <strong style="color:var(--accent-light)">چند لایه به‌هم‌پیوسته</strong> است؛ نه چند سرویس جدا از هم. این لایه‌ها روی هم سوار می‌شوند
+            و یک موتور واحد رشد دیجیتال می‌سازند:
+        </p>
+        <div class="cards">
+            <div class="card"><div class="card-icon">🎨</div><h4>بازطراحی سایت</h4><p>بازطراحی وب‌سایت با معماری مدرن، تبدیل‌محور و موبایل-محور</p></div>
+            <div class="card"><div class="card-icon">🔍</div><h4>سئو</h4><p>ساخت معماری موتور‌جستجو‌محور به‌عنوان بستر جذب تقاضای ارگانیک</p></div>
+            <div class="card"><div class="card-icon">✍️</div><h4>محتوا</h4><p>تولید محتوای استراتژیک برای ایجاد اعتبار تخصصی و مرجعیت موضوعی</p></div>
+            <div class="card"><div class="card-icon">🧠</div><h4>هوش مصنوعی</h4><p>لایه هوشمند برای تعامل، پاسخ‌گویی و واجد شرایط کردن سرنخ‌ها</p></div>
+            <div class="card"><div class="card-icon">🎯</div><h4>Lead Generation</h4><p>تبدیل بازدیدکننده به سرنخ با فرم‌های هوشمند و مسیرهای تبدیل</p></div>
+            <div class="card"><div class="card-icon">📣</div><h4>بازاریابی اجتماعی</h4><p>فعالیت شبکه‌های اجتماعی بر مبنای یک استراتژی واحد و یکپارچه</p></div>
+            <div class="card"><div class="card-icon">📊</div><h4>تحلیل داده</h4><p>اندازه‌گیری، تحلیل و بهینه‌سازی مستمر بر پایه داده واقعی</p></div>
+        </div>
+        <div class="info-green">
+            <strong>نتیجه:</strong> در پایان این پروژه، شما یک «سایت جدید» تحویل نمی‌گیرید؛ یک <strong style="color:var(--accent-light)">اکوسیستم رشد دیجیتال</strong> تحویل می‌گیرید که قادر است در طول زمان رشد کند، تقاضا جذب کند، سرنخ بسازد و فروش را سیستماتیک کند.
+        </div>
+    </section>
+
+    <!-- ۲ -->
+    <section class="section" id="s2">
+        <div class="section-head">
+            <span class="section-icon">۲</span>
+            <div class="section-head-content">
+                <h2 class="section-title">بازطراحی و توسعه وب‌سایت</h2>
+                <div class="section-subtitle">Website Redesign — از تحقیق تجربه کاربری تا طراحی رابط کاربری</div>
+            </div>
+        </div>
+        <p>
+            هدف این مرحله، تبدیل وب‌سایت فعلی به یک <strong style="color:var(--accent-light)">پلتفرم مدرن، سریع، حرفه‌ای و تبدیل‌محور</strong> است که متناسب با جایگاه یک برند صنعتی طراحی شده باشد.
+            ابتدا ساختار فعلی سایت‌ها بررسی و اطلاعات ارزشمند موجود حفظ می‌شود، سپس تجربه کاربری و رابط کاربری بر اساس نیازهای واقعی مخاطبان بازطراحی خواهد شد.
+        </p>
+
+        <h3>فاز اول — تحقیق تجربه کاربری</h3>
+        <div class="cards">
+            <div class="card"><div class="card-icon">🔎</div><h4>بررسی ساختار فعلی</h4><p>تحلیل معماری موجود، صفحات، محتوا و اطلاعات ارزشمند قابل حفظ</p></div>
+            <div class="card"><div class="card-icon">👥</div><h4>شناسایی مخاطبان</h4><p>تفکیک نیاز کاربران B2B و B2C (در صورت وجود) و تحلیل مسیر احتمالی آن‌ها</p></div>
+            <div class="card"><div class="card-icon">🧭</div><h4>تحلیل مسیر کاربر</h4><p>شناسایی نقاط ضعف مسیر کاربر و فرصت‌های بهبود در تجربه فعلی</p></div>
+            <div class="card"><div class="card-icon">📈</div><h4>صفحات دارای ارزش سئو</h4><p>شناسایی صفحات کلیدی که باید در بازطراحی حفظ و تقویت شوند</p></div>
+            <div class="card"><div class="card-icon">🏗️</div><h4>معماری اطلاعات جدید</h4><p>طراحی معماری اطلاعات جدید بر اساس نیاز کاربران و اهداف کسب‌وکار</p></div>
+        </div>
+
+        <h3>فاز دوم — طراحی رابط و تجربه کاربری در فیگما</h3>
+        <p>طراحی اختصاصی و کاملاً کاستوم‌سازی‌شده شامل:</p>
+        <div class="cards">
+            <div class="card"><div class="card-icon">🏠</div><h4>صفحه اصلی</h4><p>با معماری تبدیل‌محور و دکمه‌های اقدام برجسته</p></div>
+            <div class="card"><div class="card-icon">🛠️</div><h4>صفحات خدمات</h4><p>معرفی حرفه‌ای هر خدمت با ساختار سئو‌محور</p></div>
+            <div class="card"><div class="card-icon">📦</div><h4>صفحات محصولات</h4><p>طراحی به‌عنوان صفحه فرود تخصصی جذب و تبدیل</p></div>
+            <div class="card"><div class="card-icon">🗂️</div><h4>دسته‌بندی محصولات</h4><p>معماری صفحات دسته‌بندی با نگاه به سئو و تجربه کاربری</p></div>
+            <div class="card"><div class="card-icon">🏗️</div><h4>صفحات پروژه‌ها</h4><p>نمایش نمونه‌کارها به‌عنوان ابزار اعتماد‌سازی</p></div>
+            <div class="card"><div class="card-icon">👤</div><h4>درباره ما</h4><p>روایت حرفه‌ای هویت، تیم و توانمندی‌های برند</p></div>
+            <div class="card"><div class="card-icon">📞</div><h4>تماس با ما</h4><p>طراحی با تمرکز بر تسهیل ارتباط و ثبت سرنخ</p></div>
+            <div class="card"><div class="card-icon">📚</div><h4>مقالات و مرکز دانش</h4><p>مرکز محتوایی با ساختار خوشه موضوعی</p></div>
+            <div class="card"><div class="card-icon">❓</div><h4>سوالات متداول</h4><p>صفحات پرسش‌های متداول با ساختار داده‌ای تخصصی</p></div>
+            <div class="card"><div class="card-icon">🎯</div><h4>صفحات فرود کمپین</h4><p>صفحات فرود اختصاصی برای کمپین‌های جذب</p></div>
+            <div class="card"><div class="card-icon">🔍</div><h4>صفحات تخصصی سئو</h4><p>صفحات هدف‌گذاری‌شده برای کلمات کلیدی کلیدی</p></div>
+            <div class="card"><div class="card-icon">📱</div><h4>طراحی موبایل-محور</h4><p>اولویت تجربه موبایل در تمام صفحات و دکمه‌های اقدام</p></div>
+        </div>
+        <div class="info-blue"><strong>مزیت:</strong> طراحی اختصاصی در فیگما به‌جای قالب آماده، یعنی هویت بصری ژیارکو دقیقاً منطبق بر جایگاه صنعتی آن شکل می‌گیرد و هر المان با نگاه به هدف تبدیل طراحی می‌شود.</div>
+    </section>
+
+    <!-- ۳ -->
+    <section class="section" id="s3">
+        <div class="section-head">
+            <span class="section-icon">۳</span>
+            <div class="section-head-content">
+                <h2 class="section-title">طراحی صفحات محصول به‌عنوان صفحه فرود تخصصی</h2>
+                <div class="section-subtitle">Product Pages as SEO & Lead Generation Assets</div>
+            </div>
+        </div>
+        <div class="highlight">
+            <strong>با توجه به ماهیت صنعتی ژیارکو،</strong> صفحات محصول صرفاً نباید یک تصویر و توضیح کوتاه باشند. هر محصول می‌تواند به یک <strong style="color:var(--accent-light)">صفحه فرود تخصصی برای سئو و جذب مشتری</strong> تبدیل شود؛ صفحه‌ای که همزمان برای <strong>کاربر، موتور جستجو و تیم فروش</strong> کار می‌کند.
+        </div>
+        <h3>ساختار پیشنهادی صفحه محصول</h3>
+        <div class="cards">
+            <div class="card"><div class="card-icon">📌</div><h4>معرفی و کاربردها</h4><p>معرفی محصول، کاربردهای اصلی و جایگاه آن در پروژه‌های واقعی</p></div>
+            <div class="card"><div class="card-icon">⚙️</div><h4>مشخصات فنی</h4><p>مشخصات فنی، ویژگی‌های مهندسی و استانداردهای مرتبط</p></div>
+            <div class="card"><div class="card-icon">🏅</div><h4>گواهینامه‌ها</h4><p>استانداردها، گواهینامه‌ها و مستندات فنی قابل دانلود</p></div>
+            <div class="card"><div class="card-icon">🎬</div><h4>تصاویر و ویدیو</h4><p>رسانه‌های بصری برای درک بهتر محصول و اعتماد‌سازی</p></div>
+            <div class="card"><div class="card-icon">🏗️</div><h4>پروژه‌های مرتبط</h4><p>نمایش نمونه‌های واقعی که محصول در آن‌ها استفاده شده</p></div>
+            <div class="card"><div class="card-icon">🔗</div><h4>محصولات مکمل</h4><p>پیشنهاد محصولات مرتبط برای افزایش درگیری و فروش مکمل</p></div>
+            <div class="card"><div class="card-icon">❓</div><h4>سوالات متداول</h4><p>پرسش‌های متداول تخصصی محصول با ساختار داده‌ای</p></div>
+            <div class="card"><div class="card-icon">💬</div><h4>درخواست مشاوره</h4><p>فرم‌های هوشمند دریافت مشاوره و استعلام قیمت</p></div>
+            <div class="card"><div class="card-icon">📥</div><h4>دریافت کاتالوگ</h4><p>دریافت کاتالوگ و دیتاشیت محصول با ثبت اطلاعات</p></div>
+            <div class="card"><div class="card-icon">📞</div><h4>دکمه‌های اقدام</h4><p>دکمه‌های تماس مستقیم و اتصال به پیام‌رسان‌ها</p></div>
+            <div class="card"><div class="card-icon">🔍</div><h4>سئو‌محوری کامل</h4><p>متادیتا، ساختار داده‌ای، ساختار عنوان و لینک‌سازی داخلی اختصاصی</p></div>
+        </div>
+        <div class="info-green"><strong>نتیجه:</strong> صفحات محصول از یک «کاتالوگ خشک» به یک <strong style="color:var(--accent-light)">موتور جذب تقاضا</strong> تبدیل می‌شوند که هم ترافیک ارگانیک می‌سازند، هم سرنخ واجد شرایط تحویل تیم فروش می‌دهند.</div>
+    </section>
+
+    <!-- ۴ -->
+    <section class="section" id="s4">
+        <div class="section-head">
+            <span class="section-icon">۴</span>
+            <div class="section-head-content">
+                <h2 class="section-title">سئوی فنی — زیرساخت موتور‌جستجو‌محور</h2>
+                <div class="section-subtitle">Technical SEO — Search Engine Friendly Architecture</div>
+            </div>
+        </div>
+        <p>
+            یکی از مهم‌ترین بخش‌های این پروژه، سئو خواهد بود. هدف ما صرفاً افزایش چند کلمه کلیدی نیست؛ بلکه ساخت یک <strong style="color:var(--accent-light)">معماری موتور‌جستجو‌پسند</strong> کامل برای ژیارکو است که پایه‌ی رشد ارگانیک سال‌های آینده را می‌سازد.
+        </p>
+        <div class="cards">
+            <div class="card"><div class="card-icon">🧭</div><h4>ایندکس و کراول</h4><p>بررسی و بهینه‌سازی امکان ایندکس و کراول شدن تمام صفحات ارزشمند سایت</p></div>
+            <div class="card"><div class="card-icon">🔗</div><h4>ساختار آدرس</h4><p>اصلاح آدرس‌ها به ساختاری معنادار، کوتاه و حاوی کلمه کلیدی</p></div>
+            <div class="card"><div class="card-icon">🗺️</div><h4>نقشه سایت و روبات</h4><p>پیاده‌سازی نقشه سایت پویا و فایل روبات هوشمند</p></div>
+            <div class="card"><div class="card-icon">↪️</div><h4>مدیریت تغییر مسیر</h4><p>مدیریت آدرس‌های اصلی و تغییر مسیرهای ۳۰۱ به‌صورت اصولی</p></div>
+            <div class="card"><div class="card-icon">⚠️</div><h4>مدیریت صفحات ۴۰۴</h4><p>شناسایی و مدیریت صفحات ۴۰۴ و هدایت کاربر به صفحات مرتبط</p></div>
+            <div class="card"><div class="card-icon">📊</div><h4>داده ساختاریافته</h4><p>پیاده‌سازی اسکیماهای تخصصی (محصول، خدمت، سازمان، سوالات متداول، مقاله)</p></div>
+            <div class="card"><div class="card-icon">🌐</div><h4>شبکه‌های اجتماعی</h4><p>تنظیم پیش‌نمایش برای نمایش حرفه‌ای در شبکه‌های اجتماعی و پیام‌رسان‌ها</p></div>
+            <div class="card"><div class="card-icon">🏷️</div><h4>عنوان و توضیحات متا</h4><p>تولید متادیتای منحصربه‌فرد و جذاب برای تمام صفحات</p></div>
+            <div class="card"><div class="card-icon">📐</div><h4>ساختار عنوان‌ها</h4><p>ساختار صحیح عنوان‌ها در تمام صفحات سایت</p></div>
+            <div class="card"><div class="card-icon">🖼️</div><h4>سئوی تصاویر</h4><p>بهینه‌سازی تصاویر، فشرده‌سازی و متن جایگزین توصیفی</p></div>
+            <div class="card"><div class="card-icon">🔗</div><h4>لینک‌سازی داخلی</h4><p>ساختار لینک‌سازی داخلی هوشمند برای تقویت صفحات کلیدی</p></div>
+            <div class="card"><div class="card-icon">🍞</div><h4>مسیر راهنما</h4><p>پیاده‌سازی مسیر راهنما استاندارد با ساختار داده‌ای</p></div>
+            <div class="card"><div class="card-icon">⚡</div><h4>شاخص‌های وب حیاتی</h4><p>هدف‌گذاری روی سرعت بارگذاری، تعامل و پایداری بصری در محدوده سبز</p></div>
+            <div class="card"><div class="card-icon">📱</div><h4>سئوی موبایل</h4><p>بهینه‌سازی کامل تجربه موبایل و ایندکس موبایل-محور</p></div>
+            <div class="card"><div class="card-icon">🧹</div><h4>بهینه‌سازی کد</h4><p>کاهش حجم، حذف کدهای غیرضروری و بهبود رندرینگ</p></div>
+            <div class="card"><div class="card-icon">🖼️</div><h4>فرمت‌های مدرن تصویر</h4><p>استفاده از فرمت‌های مدرن تصویر و بارگذاری هوشمند</p></div>
+        </div>
+        <div class="info-blue"><strong>مزیت:</strong> پایه‌ی فنی سایت به گونه‌ای ساخته می‌شود که تمام سرمایه‌گذاری‌های بعدی روی محتوا، هوش مصنوعی و بازاریابی، حداکثر بازدهی را داشته باشند.</div>
+    </section>
+
+    <!-- ۵ -->
+    <section class="section" id="s5">
+        <div class="section-head">
+            <span class="section-icon">۵</span>
+            <div class="section-head-content">
+                <h2 class="section-title">سئوی استراتژیک — از تحقیق کلمات کلیدی تا نقشه راه محتوایی</h2>
+                <div class="section-subtitle">Strategic SEO & Keyword Intelligence</div>
+            </div>
+        </div>
+        <p>
+            بعد از سئوی فنی، وارد لایه اصلی سئو می‌شویم. در این مرحله، <strong style="color:var(--accent-light)">تحقیق جامع کلمات کلیدی</strong> بر اساس محصولات، خدمات، کاربردها، مشکلات مشتری، اصطلاحات تخصصی صنعت، قصد جستجو و کلمات رقبا انجام می‌شود.
+        </p>
+        <h3>دسته‌بندی کلمات کلیدی بر اساس قصد جستجو</h3>
+        <div class="crm-flow">
+            <div class="crm-step"><div class="crm-step-icon">📖</div><strong>اطلاعاتی</strong><p>کاربر به‌دنبال آموزش و اطلاعات است</p></div>
+            <div class="crm-step"><div class="crm-step-icon">🛒</div><strong>تجاری</strong><p>کاربر در حال بررسی و مقایسه گزینه‌هاست</p></div>
+            <div class="crm-step"><div class="crm-step-icon">💳</div><strong>خرید</strong><p>کاربر آماده خرید یا درخواست استعلام است</p></div>
+            <div class="crm-step"><div class="crm-step-icon">🧭</div><strong>ناوبری</strong><p>کاربر به‌دنبال برند یا صفحه خاصی است</p></div>
+        </div>
+        <div class="info-gold"><strong>نتیجه:</strong> برای هر گروه از کلمات کلیدی، صفحه مناسب تعریف می‌شود تا ترافیک وارد شده دقیقاً به صفحه‌ای برسد که قصد کاربر را برآورده می‌کند — این یعنی نرخ تبدیل بالاتر و تجربه کاربری بهتر.</div>
+    </section>
+
+    <!-- ۶ -->
+    <section class="section" id="s6">
+        <div class="section-head">
+            <span class="section-icon">۶</span>
+            <div class="section-head-content">
+                <h2 class="section-title">خوشه موضوعی — ساخت مرجعیت تخصصی برای ژیارکو</h2>
+                <div class="section-subtitle">Topic Cluster — Topical Authority Building</div>
+            </div>
+        </div>
+        <div class="highlight">
+            <strong>به جای تولید مقاله‌های پراکنده،</strong> ساختار محتوایی سایت به شکل <strong style="color:var(--accent-light)">خوشه موضوعی</strong> طراحی می‌شود. این ساختار باعث می‌شود سایت به مرور تبدیل به یک <strong style="color:var(--accent-light)">مرجع تخصصی</strong> در حوزه کاری خود شود و موتورهای جستجو آن را به‌عنوان مرجع بشناسند.
+        </div>
+        <h3>نمونه ساختار خوشه موضوعی</h3>
+        <div class="cluster-visual">
+            <div class="cluster-root">🏗️ مقاوم‌سازی سازه</div>
+            <div class="cluster-grid">
+                <div class="cluster-item">مقاوم‌سازی ساختمان</div>
+                <div class="cluster-item">مقاوم‌سازی بتن</div>
+                <div class="cluster-item">مقاوم‌سازی تیر</div>
+                <div class="cluster-item">مقاوم‌سازی ستون</div>
+                <div class="cluster-item">مقاوم‌سازی با FRP</div>
+                <div class="cluster-item">الیاف کربن</div>
+                <div class="cluster-item">رزین</div>
+                <div class="cluster-item">چسب</div>
+                <div class="cluster-item">محصولات مرتبط</div>
+            </div>
+        </div>
+        <div class="info-green"><strong>نتیجه:</strong> ژیارکو در طول زمان به مرجع تخصصی حوزه خود در نتایج گوگل تبدیل می‌شود؛ پدیده‌ای که آن را <strong style="color:var(--accent-light)">مرجعیت موضوعی</strong> می‌نامیم و پایدارترین شکل رشد ارگانیک است.</div>
+    </section>
+
+    <!-- ۷ -->
+    <section class="section" id="s7">
+        <div class="section-head">
+            <span class="section-icon">۷</span>
+            <div class="section-head-content">
+                <h2 class="section-title">سئوی محتوایی — محتوا با هدف، نه برای پر کردن وبلاگ</h2>
+                <div class="section-subtitle">Content with Purpose: Attract → Educate → Trust → Convert</div>
+            </div>
+        </div>
+        <p>
+            تولید محتوا صرفاً برای پر کردن وبلاگ انجام نمی‌شود. هر محتوا باید یکی از این چهار هدف را دنبال کند:
+            <strong style="color:var(--accent-light)">جذب → آموزش → اعتماد‌سازی → تبدیل</strong>.
+        </p>
+        <div class="cards">
+            <div class="card"><div class="card-icon">📝</div><h4>مقالات تخصصی</h4><p>محتوای عمیق و تخصصی در حوزه کاری ژیارکو برای ساخت اعتبار</p></div>
+            <div class="card"><div class="card-icon">📚</div><h4>راهنماهای جامع</h4><p>محتوای ستونی که به‌عنوان مرجع در موضوع خود شناخته می‌شوند</p></div>
+            <div class="card"><div class="card-icon">⚖️</div><h4>مقالات مقایسه‌ای</h4><p>مقایسه محصولات، متریال‌ها و روش‌های اجرایی برای کاربران در مرحله تصمیم</p></div>
+            <div class="card"><div class="card-icon">🏗️</div><h4>مطالعه موردی</h4><p>مستندسازی پروژه‌های واقعی به‌عنوان قوی‌ترین ابزار اعتماد‌سازی</p></div>
+            <div class="card"><div class="card-icon">🎯</div><h4>صفحات کاربرد محصول</h4><p>محتوای اختصاصی برای هر کاربرد محصول</p></div>
+            <div class="card"><div class="card-icon">❓</div><h4>سوالات متداول</h4><p>پاسخ به پرسش‌های واقعی کاربران با ساختار داده‌ای</p></div>
+            <div class="card"><div class="card-icon">📐</div><h4>محتوای مهندسی</h4><p>محتوای فنی و تخصصی برای جذب مخاطب حرفه‌ای صنعت</p></div>
+            <div class="card"><div class="card-icon">🎓</div><h4>محتوای آموزشی</h4><p>آموزش‌هایی که مخاطب را از مرحله آگاهی به مرحله اعتماد می‌برند</p></div>
+            <div class="card"><div class="card-icon">💼</div><h4>محتوای تجاری</h4><p>محتوایی که مستقیماً کاربر را به سمت استعلام و خرید هدایت می‌کند</p></div>
+            <div class="card"><div class="card-icon">📱</div><h4>محتوای شبکه‌های اجتماعی</h4><p>بازتولید محتوا متناسب با ماهیت هر پلتفرم</p></div>
+        </div>
+        <div class="info-blue"><strong>نکته کلیدی:</strong> در تولید محتوا از هوش مصنوعی به‌عنوان <strong style="color:var(--accent-light)">شتاب‌دهنده فرآیند تحقیق، ایده‌پردازی، ساختاردهی و تولید اولیه</strong> استفاده می‌شود، اما خروجی نهایی با کنترل انسانی و متناسب با تخصص ژیارکو تدوین خواهد شد.</div>
+    </section>
+
+    <!-- ۸ -->
+    <section class="section" id="s8">
+        <div class="section-head">
+            <span class="section-icon">۸</span>
+            <div class="section-head-content">
+                <h2 class="section-title">چت‌بات هوشمند اختصاصی ژیارکو</h2>
+                <div class="section-subtitle">Brand-Specific AI Assistant</div>
+            </div>
+        </div>
+        <div class="ai-showcase">
+            <div class="ai-showcase-inner">
+                <div>
+                    <span class="eyebrow blue">دستیار هوشمند برند</span>
+                    <h3>یک دستیار هوشمند که ژیارکو را می‌شناسد و مشتری را هدایت می‌کند</h3>
+                    <p>
+                        یکی از بخش‌هایی که این پروژه را از یک پروژه معمولی طراحی سایت جدا می‌کند، افزودن <strong>لایه هوش مصنوعی اختصاصی برند</strong> است.
+                        دستیار هوشمند روی سایت، بر اساس اطلاعات تأییدشده ژیارکو، محصولات را معرفی می‌کند، به سؤالات تخصصی اولیه پاسخ می‌دهد و کاربر را به محصول یا صفحه مناسب هدایت می‌کند.
+                        این سیستم با معماری <strong>RAG</strong> طراحی می‌شود تا پاسخ‌ها دقیقاً از دانش اختصاصی ژیارکو استخراج شوند.
+                    </p>
+                    <div class="ai-features">
+                        <div class="ai-feature">🧠 معرفی هوشمند محصولات بر اساس نیاز کاربر</div>
+                        <div class="ai-feature">💬 پاسخ به سوالات تخصصی اولیه</div>
+                        <div class="ai-feature">🎯 هدایت کاربر به محصول یا صفحه مناسب</div>
+                        <div class="ai-feature">📞 دریافت اطلاعات تماس کاربر</div>
+                        <div class="ai-feature">📝 ثبت خودکار درخواست مشاوره و استعلام</div>
+                        <div class="ai-feature">📥 معرفی کاتالوگ و مستندات مرتبط</div>
+                        <div class="ai-feature">🔗 هدایت به صفحات مرتبط سایت</div>
+                        <div class="ai-feature">📊 ثبت خودکار سرنخ در CRM</div>
+                    </div>
+                </div>
+                <div class="chat-window">
+                    <div class="chat-head">
+                        <div class="chat-avatar">AI</div>
+                        <div><strong>دستیار هوشمند ژیارکو</strong><small>● آنلاین — پاسخ‌گویی ۲۴ ساعته</small></div>
+                    </div>
+                    <div class="bubble ai">سلام 👋 به وب‌سایت ژیارکو خوش آمدید. برای چه حوزه‌ای نیاز به مشاوره دارید؟ (مقاوم‌سازی، محصولات، مستندات فنی، استعلام قیمت)</div>
+                    <div class="bubble user">برای مقاوم‌سازی یک ساختمان بتنی، نیاز به مشاوره فنی و قیمت الیاف کربن داریم.</div>
+                    <div class="bubble ai">عالی. برای ارائه دقیق، لطفاً نوع سازه، متراژ تقریبی و بازه زمانی پروژه را مشخص کنید تا کارشناس مربوطه پیگیری کند.</div>
+                    <div class="typing"><span></span><span></span><span></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="info-gold"><strong>نتیجه:</strong> کاربر در هر ساعت از شبانه‌روز پاسخ دقیق و برند‌محور دریافت می‌کند و در صورت جدی بودن، مستقیماً به تیم فروش متصل می‌شود — بدون اتلاف زمان و بدون سرنخ‌های از دست رفته.</div>
+    </section>
+
+    <!-- ۹ -->
+    <section class="section" id="s9">
+        <div class="section-head">
+            <span class="section-icon">۹</span>
+            <div class="section-head-content">
+                <h2 class="section-title">Lead Generation، محتوای هوشمند و اندازه‌گیری</h2>
+                <div class="section-subtitle">از بازدیدکننده تا سرنخ واجد شرایط، با محتوای هوشمند و تحلیل دقیق</div>
+            </div>
+        </div>
+
+        <h3>مسیر تبدیل بازدیدکننده به سرنخ</h3>
+        <div class="highlight">
+            <strong>وب‌سایت جدید نباید فقط بازدیدکننده داشته باشد؛</strong> باید بتواند بازدیدکننده را به <strong style="color:var(--accent-light)">سرنخ واجد شرایط</strong> تبدیل کند. برای این کار، یک مسیر تبدیل چندلایه طراحی می‌شود.
+        </div>
+        <div class="crm-flow">
+            <div class="crm-step"><div class="crm-step-icon">🔍</div><strong>ورود کاربر</strong><p>از گوگل، شبکه‌های اجتماعی و کمپین‌ها</p></div>
+            <div class="crm-step"><div class="crm-step-icon">🎯</div><strong>صفحه فرود</strong><p>صفحه فرود هدفمند بر اساس قصد کاربر</p></div>
+            <div class="crm-step"><div class="crm-step-icon">📦</div><strong>محصول / خدمت</strong><p>معرفی تخصصی محصول یا خدمت مرتبط</p></div>
+            <div class="crm-step"><div class="crm-step-icon">🤖</div><strong>دستیار هوشمند</strong><p>تعامل هوشمند و راهنمایی کاربر</p></div>
+            <div class="crm-step"><div class="crm-step-icon">✅</div><strong>واجد شرایط</strong><p>واجد شرایط کردن سرنخ</p></div>
+            <div class="crm-step"><div class="crm-step-icon">📝</div><strong>ثبت اطلاعات</strong><p>ثبت در فرم‌های هوشمند داینامیک</p></div>
+            <div class="crm-step"><div class="crm-step-icon">📊</div><strong>CRM</strong><p>ورود خودکار به سیستم مدیریت سرنخ</p></div>
+            <div class="crm-step"><div class="crm-step-icon">📞</div><strong>تیم فروش</strong><p>پیگیری توسط تیم فروش</p></div>
+        </div>
+        <div class="info-blue"><strong>فرم‌های هوشمند داینامیک:</strong> فرم‌ها بر اساس پاسخ کاربر شخصی‌سازی می‌شوند و شامل اطلاعات فردی، حوزه فعالیت، نوع پروژه، محصول موردنظر، حجم یا نیاز تقریبی، بازه زمانی و توضیحات تکمیلی هستند. نتیجه: تیم فروش به‌جای یک ایمیل خام، یک <strong style="color:var(--accent-light)">سرنخ واجد شرایط، دسته‌بندی‌شده و دارای زمینه کامل</strong> دریافت می‌کند.</div>
+
+        <h3>هوشمندسازی تولید محتوا</h3>
+        <p>
+            هوش مصنوعی به‌عنوان یک <strong style="color:var(--accent-light)">موتور محتوا</strong> در کنار تیم انسانی استفاده می‌شود و سرعت تولید، تحقیق و بازتولید محتوا را چند برابر می‌کند.
+            اما هویت بصری، لحن برند و صحت تخصصی محتوا توسط تیم انسانی کنترل خواهد شد.
+        </p>
+        <div class="cards">
+            <div class="card"><div class="card-icon">💡</div><h4>ایده‌پردازی</h4><p>تولید ایده‌های محتوایی متناسب با استراتژی برند</p></div>
+            <div class="card"><div class="card-icon">🔍</div><h4>تحقیق</h4><p>تحقیق سریع و گسترده در موضوعات تخصصی</p></div>
+            <div class="card"><div class="card-icon">🗓️</div><h4>برنامه‌ریزی محتوا</h4><p>برنامه‌ریزی محتوایی هفتگی و ماهانه</p></div>
+            <div class="card"><div class="card-icon">✍️</div><h4>نگارش اولیه</h4><p>تولید نسخه اولیه متن برای ویرایش انسانی</p></div>
+            <div class="card"><div class="card-icon">🎬</div><h4>سناریو و ویدیو</h4><p>سناریونویسی، استوری‌بورد و تولید ویدیو با کمک AI</p></div>
+            <div class="card"><div class="card-icon">♻️</div><h4>بازتولید محتوا</h4><p>تبدیل یک محتوا به فرمت‌های مختلف پلتفرم‌ها</p></div>
+        </div>
+
+        <h3>تحلیل و اندازه‌گیری عملکرد</h3>
+        <p>تمام فعالیت‌ها باید قابل اندازه‌گیری باشند. بدون داده، تصمیم‌گیری دقیق امکان‌پذیر نیست.</p>
+        <div class="cards">
+            <div class="card"><div class="card-icon">🌐</div><h4>وب‌سایت</h4><p>کاربران، بازدیدها، منابع ترافیک، صفحات فرود، تعامل و نرخ تبدیل</p></div>
+            <div class="card"><div class="card-icon">🔍</div><h4>سئو</h4><p>کلیک ارگانیک، نمایش، نرخ کلیک، میانگین رتبه، رشد کلمات کلیدی</p></div>
+            <div class="card"><div class="card-icon">🎯</div><h4>سرنخ</h4><p>تعداد سرنخ، منبع، محصول موردنظر، نرخ تبدیل و وضعیت فروش</p></div>
+            <div class="card"><div class="card-icon">📣</div><h4>شبکه‌های اجتماعی</h4><p>دسترسی، تعامل، رشد دنبال‌کننده، عملکرد محتوا و ترافیک ورودی</p></div>
+        </div>
+        <div class="info-green"><strong>نتیجه:</strong> مدیران ژیارکو می‌توانند با یک نگاه به داشبورد، دقیقاً بدانند کدام کانال، کدام محتوا و کدام کمپین بیشترین بازدهی را داشته و بودجه را بر اساس داده واقعی تخصیص دهند.</div>
+    </section>
+
+    <!-- ۱۰ -->
+    <section class="section" id="s10">
+        <div class="section-head">
+            <span class="section-icon">۱۰</span>
+            <div class="section-head-content">
+                <h2 class="section-title">بات اختصاصی بله و پیام‌رسان‌ها</h2>
+                <div class="section-subtitle">Bale & Messenger Bot — Lead Generation on Messaging Platforms</div>
+            </div>
+        </div>
+        <div class="gift">
+            <div class="gift-top">
+                <div class="gift-title">
+                    <span>🤖 سرویس اختصاصی</span>
+                    <h3>طراحی و پیاده‌سازی بات اختصاصی بله و پیام‌رسان‌ها</h3>
+                </div>
+            </div>
+            <p>
+                برای اطلاع‌رسانی و Lead Generation، یک <strong>بات اختصاصی در پیام‌رسان بله</strong> (و در صورت نیاز سایر پیام‌رسان‌ها) ایجاد می‌شود.
+                این بات با دکمه‌های تعاملی به هسته هوش مصنوعی و CRM متصل است و به‌عنوان کانال ارتباطی مستقیم و کم‌هزینه با مخاطبان صنعتی عمل می‌کند.
+            </p>
+            <div class="gift-grid">
+                <div class="gift-item"><strong>📝 ثبت درخواست مشاوره</strong><p>ثبت سریع درخواست مشاوره از طریق بات با فرم‌های مرحله‌ای</p></div>
+                <div class="gift-item"><strong>💰 ثبت درخواست استعلام</strong><p>دریافت درخواست قیمت و استعلام محصولات</p></div>
+                <div class="gift-item"><strong>📞 دریافت اطلاعات تماس</strong><p>جمع‌آوری شماره تماس، شرکت و اطلاعات ضروری</p></div>
+                <div class="gift-item"><strong>📦 معرفی محصولات</strong><p>نمایش حرفه‌ای محصولات ژیارکو با تصاویر و توضیحات</p></div>
+                <div class="gift-item"><strong>📥 ارسال کاتالوگ</strong><p>ارسال کاتالوگ، دیتاشیت و مستندات فنی</p></div>
+                <div class="gift-item"><strong>📢 اطلاع‌رسانی محصولات جدید</strong><p>اعلان محصولات جدید به مخاطبان عضو بات</p></div>
+                <div class="gift-item"><strong>📚 ارسال مقالات جدید</strong><p>اطلاع‌رسانی مقالات تخصصی و مرکز دانش</p></div>
+                <div class="gift-item"><strong>🎯 اطلاع‌رسانی کمپین‌ها</strong><p>معرفی کمپین‌ها و پیشنهادات به مخاطبان</p></div>
+                <div class="gift-item"><strong>🤝 دریافت درخواست همکاری</strong><p>دریافت پیشنهاد همکاری، نمایندگی و تأمین</p></div>
+                <div class="gift-item"><strong>📤 انتقال سرنخ</strong><p>ارسال خودکار سرنخ‌ها به سیستم مدیریت</p></div>
+                <div class="gift-item"><strong>🔄 اتصال به CRM</strong><p>یکپارچگی کامل با CRM از طریق API</p></div>
+                <div class="gift-item"><strong>🔔 اعلان فوری</strong><p>اطلاع‌رسانی لحظه‌ای سرنخ جدید به تیم فروش</p></div>
+            </div>
+            <div class="gift-goal"><strong>🎯 مسیر یکپارچه:</strong> بات → CRM → فروش — کاربر در هر ساعتی می‌تواند درخواست ثبت کند و بلافاصله در سیستم ژیارکو به‌صورت یک سرنخ قابل پیگیری ثبت می‌شود.</div>
+        </div>
+    </section>
+
+    <!-- ۱۱ -->
+    <section class="section" id="s11">
+        <div class="section-head">
+            <span class="section-icon">۱۱</span>
+            <div class="section-head-content">
+                <h2 class="section-title">اتصال سایت به CRM و قیف فروش</h2>
+                <div class="section-subtitle">No Lead Should Get Lost</div>
+            </div>
+        </div>
+        <div class="highlight">
+            <strong>تمام سرنخ‌ها نباید در ایمیل یا واتساپ گم شوند.</strong>
+            پیشنهاد کدپکس، ایجاد یک <strong style="color:var(--accent-light)">قیف فروش شفاف و قابل اندازه‌گیری</strong> است که هر سرنخ را از ورود تا بستن قرارداد ردیابی می‌کند.
+        </div>
+        <h3>قیف فروش پیشنهادی</h3>
+        <div class="timeline">
+            <div class="timeline-item"><div class="timeline-dot">۱</div><div class="timeline-content"><strong>ورود سرنخ</strong><span>New Lead</span><p>ثبت خودکار از سایت، بات، فرم‌ها و پیام‌رسان‌ها</p></div></div>
+            <div class="timeline-item"><div class="timeline-dot">۲</div><div class="timeline-content"><strong>واجد شرایط</strong><span>Qualified</span><p>ارزیابی اولیه و تعیین سطح کیفیت سرنخ</p></div></div>
+            <div class="timeline-item"><div class="timeline-dot">۳</div><div class="timeline-content"><strong>تماس گرفته شد</strong><span>Contacted</span><p>اولین تماس و بررسی نیاز واقعی مشتری</p></div></div>
+            <div class="timeline-item"><div class="timeline-dot">۴</div><div class="timeline-content"><strong>مشاوره</strong><span>Consultation</span><p>ارائه مشاوره فنی و بررسی دقیق‌تر نیاز</p></div></div>
+            <div class="timeline-item"><div class="timeline-dot">۵</div><div class="timeline-content"><strong>پیش‌فاکتور</strong><span>Quotation</span><p>ارائه پیشنهاد قیمت و شرایط همکاری</p></div></div>
+            <div class="timeline-item"><div class="timeline-dot">۶</div><div class="timeline-content"><strong>مذاکره</strong><span>Negotiation</span><p>مذاکره نهایی روی شرایط و جزئیات</p></div></div>
+            <div class="timeline-item"><div class="timeline-dot">۷</div><div class="timeline-content"><strong>نتیجه نهایی</strong><span>Won / Lost</span><p>بستن قرارداد یا ثبت دلیل عدم موفقیت برای یادگیری</p></div></div>
+        </div>
+        <div class="info-green"><strong>مدیریت شفاف:</strong> با این قیف، مدیران ژیارکو دقیقاً می‌دانند چه تعداد سرنخ وارد شده، از کجا آمده، چه محصولی خواسته، چه کسی پیگیری کرده، چند سرنخ تبدیل شده و کدام کمپین بیشترین بازدهی را داشته است.</div>
+    </section>
+
+    <!-- ۱۲ -->
+    <section class="section" id="s12">
+        <div class="section-head">
+            <span class="section-icon">۱۲</span>
+            <div class="section-head-content">
+                <h2 class="section-title">بازاریابی شبکه‌های اجتماعی — از دنبال‌کننده تا سرنخ واجد شرایط</h2>
+                <div class="section-subtitle">Social Media Marketing — From Followers to Qualified Leads</div>
+            </div>
+        </div>
+        <p>
+            پس از ایجاد زیرساخت سایت، فعالیت شبکه‌های اجتماعی نیز بر اساس <strong style="color:var(--accent-light)">یک استراتژی واحد</strong> انجام خواهد شد.
+            هدف صرفاً افزایش دنبال‌کننده نیست؛ هدف، ساخت مسیری است که مخاطب را از آگاهی به تعامل، اعتماد و در نهایت تبدیل به سرنخ هدایت کند.
+        </p>
+        <h3>کانال‌های قابل بررسی</h3>
+        <div class="cards">
+            <div class="card"><div class="card-icon">📸</div><h4>اینستاگرام</h4><p>نمایش بصری محصولات، پروژه‌ها و پشت صحنه تیم</p></div>
+            <div class="card"><div class="card-icon">💼</div><h4>لینکدین</h4><p>ارتباط با تصمیم‌گیرندگان صنعت و محتوای B2B</p></div>
+            <div class="card"><div class="card-icon">✈️</div><h4>تلگرام</h4><p>کانال اطلاع‌رسانی و ارتباط سریع با مخاطبان تخصصی</p></div>
+            <div class="card"><div class="card-icon">💬</div><h4>بله</h4><p>پیام‌رسان داخلی برای ارتباط با مخاطبان ایرانی</p></div>
+            <div class="card"><div class="card-icon">▶️</div><h4>یوتیوب</h4><p>محتوای ویدیویی تخصصی و مطالعات موردی ویدیویی</p></div>
+            <div class="card"><div class="card-icon">🌐</div><h4>سایر کانال‌ها</h4><p>کانال‌های متناسب با مخاطبان خاص ژیارکو</p></div>
+        </div>
+        <h3>قیف بازاریابی اجتماعی</h3>
+        <div class="crm-flow" style="grid-template-columns: repeat(7, 1fr);">
+            <div class="crm-step"><div class="crm-step-icon">👁️</div><strong>آگاهی</strong><p>دیده شدن</p></div>
+            <div class="crm-step"><div class="crm-step-icon">💬</div><strong>تعامل</strong><p>ارتباط با مخاطب</p></div>
+            <div class="crm-step"><div class="crm-step-icon">🎓</div><strong>آموزش</strong><p>انتقال دانش تخصصی</p></div>
+            <div class="crm-step"><div class="crm-step-icon">🤝</div><strong>اعتماد</strong><p>ساخت رابطه بلندمدت</p></div>
+            <div class="crm-step"><div class="crm-step-icon">🌐</div><strong>وب‌سایت</strong><p>ورود به سایت</p></div>
+            <div class="crm-step"><div class="crm-step-icon">🎯</div><strong>سرنخ</strong><p>تبدیل به سرنخ</p></div>
+            <div class="crm-step"><div class="crm-step-icon">💰</div><strong>فروش</strong><p>تبدیل به مشتری</p></div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         CP DIVIDER
+         ============================================================ -->
+    <div class="cp-divider">
+        <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L14.5 9H22L16 13.5L18.5 21L12 16.5L5.5 21L8 13.5L2 9H9.5L12 2Z"/></svg>
+            معرفی شرکت اجرایی پروژه
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L14.5 9H22L16 13.5L18.5 21L12 16.5L5.5 21L8 13.5L2 9H9.5L12 2Z"/></svg>
+        </span>
+    </div>
+
+    <!-- ============================================================
+         SECTION 13 — CODE PACKS SHOWCASE
+         ============================================================ -->
+    <section class="section cp-showcase" id="s13">
+        <div class="cp-header">
+            <div class="cp-badge">
+                <span class="cp-badge-dot"></span>
+                About Code Packs
+            </div>
+            <div class="cp-logo-row">
+                <span class="cp-logo-mark">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <path d="M4 6 H14 L10 14 L14 22 H4 L8 14 Z" fill="#FFFFFF"/>
+                        <path d="M4 22 H14 L10 30 L14 38 H4 L8 30 Z" fill="#FFFFFF" opacity="0.7"/>
+                        <circle cx="30" cy="14" r="6" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+                        <path d="M22 32 L30 24 L38 32" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none"/>
+                    </svg>
+                </span>
+                <div class="cp-logo-text">
+                    <h2>Code Packs</h2>
+                    <p>Intelligent Digital Solutions</p>
+                </div>
+            </div>
+            <p class="cp-tagline">
+                تیمی که این پروپوزال را برای ژیارکو طراحی کرده است —
+                <strong>۶ تخصص مکمل</strong>، از طراحی و توسعه تا هوش مصنوعی و اتوماسیون؛ همه در یک تیم هماهنگ.
+            </p>
+        </div>
+
+        <div class="cp-stats">
+            <div class="cp-stat">
+                <strong>۶</strong>
+                <span>تخصص مکمل در یک تیم</span>
+            </div>
+            <div class="cp-stat">
+                <strong>۱۵+</strong>
+                <span>پروژه صنعتی و دیجیتال</span>
+            </div>
+            <div class="cp-stat">
+                <strong>۱۰۰٪</strong>
+                <span>کدنویسی اختصاصی و بومی</span>
+            </div>
+            <div class="cp-stat">
+                <strong>End-to-End</strong>
+                <span>از طراحی تا استقرار و پشتیبانی</span>
+            </div>
+        </div>
+
+        <div class="cp-subhead">
+            <h3>تیم کدپکس — ۶ تخصص مکمل</h3>
+        </div>
+        <div class="cp-team-grid">
+            <div class="cp-team-card">
+                <div class="cp-team-avatar">AI</div>
+                <h4>متخصص هوش مصنوعی و اتوماسیون</h4>
+                <div class="cp-role">AI & Automation Specialist</div>
+                <div class="cp-team-skills">
+                    <span>AI</span><span>n8n</span><span>RAG</span>
+                </div>
+            </div>
+            <div class="cp-team-card">
+                <div class="cp-team-avatar">MK</div>
+                <h4>مسئول مارکتینگ و تبلیغات</h4>
+                <div class="cp-role">Marketing & Advertising</div>
+                <div class="cp-team-skills">
+                    <span>B2B</span><span>Ads</span><span>Growth</span>
+                </div>
+            </div>
+            <div class="cp-team-card">
+                <div class="cp-team-avatar">DA</div>
+                <h4>تحلیل‌گر داده، سئو و فرآیند</h4>
+                <div class="cp-role">Data, SEO & Process Analyst</div>
+                <div class="cp-team-skills">
+                    <span>SEO</span><span>Analytics</span><span>Research</span>
+                </div>
+            </div>
+            <div class="cp-team-card">
+                <div class="cp-team-avatar">CT</div>
+                <h4>تولیدکننده محتوای استراتژیک</h4>
+                <div class="cp-role">Content Strategist</div>
+                <div class="cp-team-skills">
+                    <span>Content</span><span>Copy</span><span>Media</span>
+                </div>
+            </div>
+            <div class="cp-team-card">
+                <div class="cp-team-avatar">FE</div>
+                <h4>توسعه‌دهنده فرانت‌اند و لندینگ</h4>
+                <div class="cp-role">Frontend Developer</div>
+                <div class="cp-team-skills">
+                    <span>UI/UX</span><span>NextJS</span><span>Performance</span>
+                </div>
+            </div>
+            <div class="cp-team-card">
+                <div class="cp-team-avatar">PM</div>
+                <h4>مدیر پروژه و هماهنگی</h4>
+                <div class="cp-role">Project Manager</div>
+                <div class="cp-team-skills">
+                    <span>Agile</span><span>Reporting</span><span>QA</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="cp-subhead">
+            <h3>پروژه‌های شاخص کدپکس</h3>
+        </div>
+        <div class="cp-portfolio">
+            <article class="cp-project">
+                <span class="cp-project-num">۰۱</span>
+                <span class="cp-project-type">INDUSTRIAL + ERP</span>
+                <h4>گروه صنعتی امکو</h4>
+                <p>طراحی وب‌سایت اختصاصی و پیاده‌سازی ERP هوشمند یکپارچه کدپکس برای مجموعه صنعتی، توسعه فروشگاه آنلاین، تولید محتوا، سئو و دیجیتال مارکتینگ. پنل نمایندگان امکو به‌عنوان مرجع اجرایی پنل نمایندگان شهرستان.</p>
+                <div class="cp-project-tags">
+                    <span>Website</span><span>E-Commerce</span><span>ERP</span><span>Panel</span><span>SEO</span>
+                </div>
+            </article>
+            <article class="cp-project">
+                <span class="cp-project-num">۰۲</span>
+                <span class="cp-project-type">SEO + LOCAL</span>
+                <h4>اصفهان باما</h4>
+                <p>طراحی وب‌سایت و پیاده‌سازی استراتژی جامع سئو محلی برای پلتفرم اصفهان باما. این پروژه با تمرکز بر بهینه‌سازی فنی، معماری محتوایی و رتبه‌بندی کلمات کلیدی محلی، توانست ترافیک ارگانیک قابل توجهی جذب کند و به‌عنوان یکی از نمونه‌های موفق سئو در سطح شهر اصفهان شناخته شود. نتایج شامل رشد پایدار رتبه کلمات کلیدی، افزایش نرخ کلیک و بهبود قابل توجه Core Web Vitals است.</p>
+                <div class="cp-project-tags">
+                    <span>SEO</span><span>Local SEO</span><span>Website</span><span>Content</span>
+                </div>
+            </article>
+            <article class="cp-project">
+                <span class="cp-project-num">۰۳</span>
+                <span class="cp-project-type">MARKETING + REAL ESTATE</span>
+                <h4>مارکتینگ املاک بزرگان</h4>
+                <p>طراحی و اجرای کامل استراتژی مارکتینگ دیجیتال از صفر تا صد برای گروه مشاورین املاک بزرگان. این پروژه شامل مدیریت حرفه‌ای پیج اینستاگرام، تولید محتوای بصری و ویدیویی، اجرای کمپین‌های تبلیغات محیطی و دیجیتال، و ساخت مسیرهای جذب و تبدیل سرنخ برای فروش ویلا و عمارت‌های لوکس بود. نتیجه: رشد چشمگیر دنبال‌کننده‌ها، افزایش تعامل و تبدیل پیج اینستاگرام به یک کانال فروش فعال و پایدار.</p>
+                <div class="cp-project-tags">
+                    <span>Instagram</span><span>Outdoor Ads</span><span>Lead Gen</span><span>Content</span><span>Real Estate</span>
+                </div>
+            </article>
+            <article class="cp-project">
+                <span class="cp-project-num">۰۴</span>
+                <span class="cp-project-type">SOCIAL MEDIA + F&B</span>
+                <h4>مارکتینگ کافه رستوران زودگیر</h4>
+                <p>طراحی و اجرای استراتژی بازاریابی دیجیتال و مدیریت پیج اینستاگرام کافه رستوران زودگیر. این پروژه شامل تولید محتوای جذاب بصری (عکاسی حرفه‌ای از غذا و فضای کافه)، اجرای کمپین‌های تعاملی، مدیریت Stories و Reels، و ساخت هویت بصری منسجم برای برند بود. هدف اصلی، تبدیل پیج اینستاگرام به ابزار جذب مشتری حضوری و افزایش آگاهی از برند در شهر کرج محقق شد.</p>
+                <div class="cp-project-tags">
+                    <span>Instagram</span><span>Content</span><span>F&B</span><span>Visual Branding</span>
+                </div>
+            </article>
+            <article class="cp-project">
+                <span class="cp-project-num">۰۵</span>
+                <span class="cp-project-type">PERSONAL BRAND + EXPORT</span>
+                <h4>پیج استاد حسین مقدم‌نژاد</h4>
+                <p>طراحی و مدیریت پیج اینستاگرام تخصصی استاد حسین مقدم‌نژاد، مشاور و بیزینس‌کوچ برجسته در حوزه صادرات و تجارت بین‌الملل (عمان، امارات و آمریکا). این پروژه با تمرکز بر ساخت برند شخصی حرفه‌ای، تولید محتوای آموزشی و تخصصی در حوزه صادرات، و استراتژی رشد ارگانیک، توانست پیج را از صفر به یک مرجع تخصصی در حوزه صادرات ایران تبدیل کند. محتوای تولیدشده شامل آموزش‌های صادراتی، تحلیل بازارهای هدف و راهکارهای عملی ورود به بازارهای بین‌المللی است.</p>
+                <div class="cp-project-tags">
+                    <span>Instagram</span><span>Personal Brand</span><span>Export</span><span>Content</span><span>Growth</span>
+                </div>
+            </article>
+            <article class="cp-project">
+                <span class="cp-project-num">۰۶</span>
+                <span class="cp-project-type">INDUSTRIAL + AI</span>
+                <h4>پویان باتری</h4>
+                <p>توسعه وب‌سایت اختصاصی، SEO و ساختار محتوایی در کنار QR Code گارانتی و قابلیت‌های هوشمند برای بهبود تجربه پس از خرید و ارتباط مشتری با برند.</p>
+                <div class="cp-project-tags">
+                    <span>Website</span><span>AI</span><span>QR System</span><span>SEO</span>
+                </div>
+            </article>
+            <article class="cp-project">
+                <span class="cp-project-num">۰۷</span>
+                <span class="cp-project-type">DIGITAL TRANSFORMATION</span>
+                <h4>پگاه باتری</h4>
+                <p>طراحی و توسعه سایت، سئو و تولید محتوا در کنار طراحی راهکارهای هوش مصنوعی و اتوماسیون برای توسعه زیرساخت دیجیتال مجموعه.</p>
+                <div class="cp-project-tags">
+                    <span>AI</span><span>Automation</span><span>Website</span><span>Content</span>
+                </div>
+            </article>
+            <article class="cp-project">
+                <span class="cp-project-num">۰۸</span>
+                <span class="cp-project-type">DIGITAL BRAND</span>
+                <h4>بازارتکس</h4>
+                <p>طراحی سایت اختصاصی، معماری محتوا و SEO با تمرکز بر ایجاد حضور دیجیتال حرفه‌ای و توسعه مسیرهای جذب مشتری.</p>
+                <div class="cp-project-tags">
+                    <span>Website</span><span>Content</span><span>SEO</span>
+                </div>
+            </article>
+            <article class="cp-project">
+                <span class="cp-project-num">۰۹</span>
+                <span class="cp-project-type">INDUSTRIAL WEBSITE</span>
+                <h4>پاور کنترل</h4>
+                <p>طراحی سایت اختصاصی، سئو و تولید محتوا برای ارائه ساختاریافته محصولات و خدمات یک مجموعه تخصصی در فضای دیجیتال.</p>
+                <div class="cp-project-tags">
+                    <span>Website</span><span>SEO</span><span>Content</span>
+                </div>
+            </article>
+            <article class="cp-project">
+                <span class="cp-project-num">۱۰</span>
+                <span class="cp-project-type">SOFTWARE PLATFORM</span>
+                <h4>Gymmy</h4>
+                <p>طراحی سایت و توسعه نرم‌افزار مدیریت باشگاه‌های ورزشی با تمرکز بر مدیریت کاربران، فرآیندهای اجرایی، اطلاعات و زیرساخت نرم‌افزاری مجموعه.</p>
+                <div class="cp-project-tags">
+                    <span>Software</span><span>Management</span><span>Website</span>
+                </div>
+            </article>
+            <article class="cp-project">
+                <span class="cp-project-num">۱۱</span>
+                <span class="cp-project-type">AI + REAL ESTATE</span>
+                <h4>اتوماسیون هوشمند املاک بزرگان</h4>
+                <p>توسعه زیرساخت دیجیتال در کنار چت‌بات هوشمند، RAG، مدیریت و پیگیری اطلاعات مشتریان؛ با تمرکز بر ترکیب حضور دیجیتال و فرآیند واقعی جذب و پاسخ‌گویی به Leadها.</p>
+                <div class="cp-project-tags">
+                    <span>AI</span><span>RAG</span><span>CRM</span><span>Website</span>
+                </div>
+            </article>
+            <article class="cp-project">
+                <span class="cp-project-num">۱۲</span>
+                <span class="cp-project-type">AI AUTOMATION</span>
+                <h4>سامانه اتوماسیون بیزینس کوچینگ صادرات</h4>
+                <p>طراحی پلتفرم دیجیتال، Voice AI، n8n، تحلیل جلسات، استخراج وظایف، مدیریت فرآیندها و داشبورد مدیریتی برای تبدیل عملیات دستی و پراکنده به Workflow هوشمند.</p>
+                <div class="cp-project-tags">
+                    <span>Voice AI</span><span>n8n</span><span>Dashboard</span><span>Automation</span>
+                </div>
+            </article>
+            <article class="cp-project">
+                <span class="cp-project-num">۱۳</span>
+                <span class="cp-project-type">MANAGEMENT SYSTEM</span>
+                <h4>نرم‌افزار اتوماسیون دهکده ورزشی</h4>
+                <p>توسعه سامانه یکپارچه مدیریت اعضا، ثبت‌نام، امور مالی، صدور قبوض، رویدادها و فرآیندهای اجرایی در کنار طراحی سایت و زیرساخت دیجیتال مجموعه.</p>
+                <div class="cp-project-tags">
+                    <span>Automation</span><span>Management</span><span>Dashboard</span>
+                </div>
+            </article>
+            <article class="cp-project">
+                <span class="cp-project-num">۱۴</span>
+                <span class="cp-project-type">COFFEE / DIGITAL BRAND</span>
+                <h4>قهوه آرگن</h4>
+                <p>تجربه اجرایی تیم Code Packs در حوزه برند قهوه؛ تجربه‌ای مرتبط با فضای محصول و بازار که نشان‌دهنده توانایی ما در ورود به صنایع مختلف با درک عمیق از مخاطب و مسیر فروش است.</p>
+                <div class="cp-project-tags">
+                    <span>Coffee</span><span>Digital</span><span>Content</span>
+                </div>
+            </article>
+            <article class="cp-project">
+                <span class="cp-project-num">۱۵</span>
+                <span class="cp-project-type">PERSONAL BRAND</span>
+                <h4>سایت اختصاصی آریا شاهبداغی</h4>
+                <p>طراحی و توسعه وب‌سایت اختصاصی برای برند شخصی آریا شاهبداغی با معماری محتوایی منحصربه‌فرد، نمایش مدارک بین‌المللی، معرفی خدمات تخصصی و پنل مدیریت فوق‌کاربردی.</p>
+                <div class="cp-project-tags">
+                    <span>Website</span><span>Personal Brand</span><span>Panel</span>
+                </div>
+            </article>
+        </div>
+
+        <div class="cp-note">
+            <p>
+                هر یک از این پروژه‌ها نشان‌دهنده توانایی ما در ترکیب تخصص‌های مختلف است — از طراحی و توسعه تا هوش مصنوعی و اتوماسیون —
+                برای خلق یک سیستم یکپارچه که دقیقاً همان چیزی است که <strong>ژیارکو</strong> به آن نیاز دارد.
+            </p>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <div class="final-content">
+            <div class="final-icon">🚀</div>
+            <h2>نه فقط یک سایت؛ <span>یک اکوسیستم رشد دیجیتال</span></h2>
+            <p>
+                زیرساختی که امروز تقاضای ارگانیک جذب می‌کند، سرنخ می‌سازد، به تیم فروش تحویل می‌دهد و در طول زمان به یک دارایی دیجیتال پایدار برای ژیارکو تبدیل می‌شود.
+                ما در کدپکس آماده‌ایم این زیرساخت را برای ژیارکو طراحی، پیاده‌سازی و به رشد برسانیم.
+            </p>
+            <button id="contactBtn" class="cta-button">
+                ارتباط با کدپکس <span>↗</span>
+            </button>
+            <div class="cta-tags">
+                <span>🎨 طراحی اختصاصی</span>
+                <span>🔍 سئوی فنی و استراتژیک</span>
+                <span>✍️ قیف محتوایی</span>
+                <span>🧠 دستیار هوشمند</span>
+                <span>🎯 Lead Generation</span>
+                <span>📊 رشد داده‌محور</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Code Packs — Intelligent Digital Solutions</strong></p>
+        <p>پروپوزال تحول دیجیتال برند ژیارکو — بازطراحی، سئو، هوش مصنوعی، Lead Generation و بازاریابی اجتماعی</p>
+        <p class="footer-slogan">Smart Solutions, Better Business</p>
+    </footer>
+
+</main>
+
+<!-- Modal -->
+<div class="contact-modal" id="contactModal">
+    <div class="contact-modal-overlay" id="modalOverlay"></div>
+    <div class="contact-modal-box">
+        <button class="modal-close" id="modalClose">×</button>
+        <h3>ارتباط با کدپکس</h3>
+        <p>یکی از راه‌های زیر را انتخاب کنید</p>
+        <div class="contact-options">
+            <a href="https://wa.me/989009999237" target="_blank" rel="noopener" class="contact-option whatsapp">
+                <span class="contact-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </span>
+                <span>واتساپ</span>
+                <small>+989009999237</small>
+            </a>
+            <a href="https://ble.ir/codepacksteam" target="_blank" rel="noopener" class="contact-option bale">
+                <span class="contact-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>
+                </span>
+                <span>بله</span>
+                <small>ble.ir/codepacksteam</small>
+            </a>
+            <a href="tel:09009999237" class="contact-option phone">
+                <span class="contact-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                </span>
+                <span>تماس</span>
+                <small>09009999237</small>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        "use strict";
+        const header = document.getElementById("siteHeader");
+        const hamburger = document.getElementById("hamburger");
+        const mobileOverlay = document.getElementById("mobileOverlay");
+        const mobilePanel = mobileOverlay.querySelector(".mobile-panel");
+        const mobileLinks = mobilePanel.querySelectorAll("a");
+        const toc = document.getElementById("toc");
+        const tocHeader = document.getElementById("tocHeader");
+        const tocButton = document.getElementById("tocButton");
+        const sections = document.querySelectorAll(".section");
+        const allNavLinks = document.querySelectorAll(".toc-links a, .mobile-panel a");
+        const backTop = document.getElementById("backTop");
+        const contactBtn = document.getElementById("contactBtn");
+        const contactModal = document.getElementById("contactModal");
+        const modalOverlay = document.getElementById("modalOverlay");
+        const modalClose = document.getElementById("modalClose");
+
+        function openMenu() { mobileOverlay.classList.add("active"); hamburger.classList.add("active"); document.body.classList.add("menu-open"); }
+        function closeMenu() { mobileOverlay.classList.remove("active"); hamburger.classList.remove("active"); document.body.classList.remove("menu-open"); }
+        hamburger.addEventListener("click", function() { mobileOverlay.classList.contains("active") ? closeMenu() : openMenu(); });
+        mobileOverlay.addEventListener("click", function(e) { if (e.target === mobileOverlay) closeMenu(); });
+        mobileLinks.forEach(function(link) { link.addEventListener("click", closeMenu); });
+        document.addEventListener("keydown", function(e) { if (e.key === "Escape") closeMenu(); });
+
+        tocHeader.addEventListener("click", function() { toc.classList.toggle("collapsed"); });
+        if (tocButton) {
+            tocButton.addEventListener("click", function() {
+                toc.classList.remove("collapsed");
+                toc.scrollIntoView({ behavior: "smooth", block: "start" });
+            });
+        }
+
+        const revealObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05, rootMargin: "0px 0px -40px 0px" });
+        sections.forEach(function(section) { revealObserver.observe(section); });
+
+        function updateActiveSection() {
+            const scrollPosition = window.scrollY + 160;
+            let activeId = "";
+            sections.forEach(function(section) {
+                const top = section.offsetTop;
+                const bottom = top + section.offsetHeight;
+                if (scrollPosition >= top && scrollPosition < bottom) activeId = section.getAttribute("id");
+            });
+            allNavLinks.forEach(function(link) {
+                const href = link.getAttribute("href");
+                const linkId = href ? href.replace("#", "") : "";
+                link.classList.toggle("active", linkId === activeId);
+            });
+        }
+
+        function handleScroll() {
+            const scrollY = window.scrollY;
+            header.classList.toggle("scrolled", scrollY > 40);
+            backTop.classList.toggle("visible", scrollY > 560);
+            updateActiveSection();
+        }
+        window.addEventListener("scroll", handleScroll, { passive: true });
+
+        backTop.addEventListener("click", function() { window.scrollTo({ top: 0, behavior: "smooth" }); });
+
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener("click", function(e) {
+                const href = this.getAttribute("href");
+                if (!href || href === "#") return;
+                const target = document.querySelector(href);
+                if (!target) return;
+                e.preventDefault();
+                target.scrollIntoView({ behavior: "smooth", block: "start" });
+            });
+        });
+
+        const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+        if (canHover) {
+            document.querySelectorAll(".card:not(.cp-project)").forEach(function(card) {
+                card.addEventListener("mousemove", function(e) {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const rotateX = ((y - rect.height/2) / (rect.height/2)) * -1.5;
+                    const rotateY = ((x - rect.width/2) / (rect.width/2)) * 1.5;
+                    card.style.transform = "translateY(-6px) perspective(900px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg)";
+                });
+                card.addEventListener("mouseleave", function() { card.style.transform = ""; });
+            });
+        }
+
+        if (contactBtn && contactModal) {
+            contactBtn.addEventListener("click", function() { contactModal.classList.add("active"); });
+            function closeModal() { contactModal.classList.remove("active"); }
+            modalOverlay.addEventListener("click", closeModal);
+            modalClose.addEventListener("click", closeModal);
+            document.addEventListener("keydown", function(e) {
+                if (e.key === "Escape" && contactModal.classList.contains("active")) closeModal();
+            });
+            document.querySelectorAll(".contact-option").forEach(function(option) {
+                option.addEventListener("click", function() { setTimeout(closeModal, 150); });
+            });
+        }
+
+        handleScroll();
+    })();
+</script>
+
+</body>
+</html>
